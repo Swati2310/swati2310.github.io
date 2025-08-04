@@ -28,6 +28,22 @@ const Hero = () => {
         <div className="max-w-2xl w-full">
           {/* Main card */}
           <div className="gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-fade-in-up">
+            {/* Profile Photo */}
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 hover:scale-105">
+                  <img 
+                    src="/ProfilePicture.png" 
+                    alt="Swati - AI Software Engineer" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-2 border-background">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+              </div>
+            </div>
+            
             <h1 className="text-5xl md:text-6xl font-bold mb-4 text-glow">
               SWATI
             </h1>
