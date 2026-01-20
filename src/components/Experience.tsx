@@ -24,7 +24,7 @@ const Experience = () => {
       title: "Senior Software Engineer",
       company: "Infosys Ltd.",
       location: "Pune, India",
-      period: "August 2019 – July 2024",
+      period: "August 2021 – July 2024",
       type: "Full-time",
       current: false,
       achievements: [
@@ -32,13 +32,24 @@ const Experience = () => {
         "Built and deployed JFrog and ECR images in Kubernetes namespaces and AWS, automating patch deployments and managing deliverables, resulting in a 85% reduction in deployment time and an 80% increase in deployment accuracy",
         "Deployed and managed Dockerized applications on AWS EKS, using Kubernetes, Docker, Ansible, and GitLab to create 15+ CI/CD pipelines, achieving a 40% reduction in infrastructure costs through optimized resource allocation and scalability",
         "Led a DevOps team of 3 in managing end-to-end development and operations for projects in SEPA and APAC region, overseeing CI/CD, E2E, and production environments for 50+ integrations, driving efficiency for client (BOFFA)",
-        "Hosted and managed Escrow deposit deployments for Finacle applications across 3+ versions with NCC Group in the UK region for Bank of America as a third-party client",
+        "Hosted and managed Escrow deposit deployments for Finacle applications across 3+ versions with NCC Group in the UK region for Bank of America as a third-party client"
+      ],
+      skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
+    },
+    {
+      title: "Software Engineer",
+      company: "Infosys Ltd.",
+      location: "Pune, India",
+      period: "August 2019 – July 2021",
+      type: "Full-time",
+      current: false,
+      achievements: [
         "Maintained OLAP data and production environment reliability for Finacle e-banking by replicating and creating 50+ databases across multiple accounts to support application structure changes in the APAC region",
         "Managed and optimized 10+ cloud servers by configuring crontab jobs, archiving logs, ensuring efficient disk management, and using Jenkins CI/CD pipelines for source code deployment, backups, and memory alerts",
         "Generated 20+ detailed reports with RReport, optimizing backend processes through complex SQL and PL/SQL queries",
         "Enhanced Finacle's functionality for an investment banking firm by customizing 100+ web pages and menus using JavaScript and JSPs"
       ],
-      skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
+      skills: ["SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle", "RReport", "JSP"]
     }
   ];
 
