@@ -5,20 +5,19 @@ import { Calendar, MapPin, Building, Code } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "AI Software Engineer Intern",
-      company: "Volithost LLC",
-      location: "Florida, United States",
-      period: "May 2025 – August 2025",
-      type: "Internship",
-      current: true,
+      title: "Software Engineer",
+      company: "Infosys Ltd.",
+      location: "Pune, India",
+      period: "August 2019 – July 2021",
+      type: "Full-time",
+      current: false,
       achievements: [
-        "Spearheading the development of a Sales Analytical Tool (MVP) for Get Up and Go Kayaking, enabling data-driven business insights from real-time weather and booking data",
-        "Designed a React + TypeScript frontend and deployed secure backend APIs using Python, Supabase, and PostgreSQL to serve filtered booking and weather data to the frontend",
-        "Integrated OpenWeather API to collect real-time weather metrics and correlate them with booking trends for predictive insights",
-        "Implemented visual dashboards using D3.js-style charts and deployed scalable infrastructure via Cloudflare and Vercel",
-        "Applied EDA and ML techniques, including time-series forecasting and customer segmentation, to support predictive analytics and strategic decisions"
+        "Maintained OLAP data and production environment reliability for Finacle e-banking by replicating and creating 50+ databases across multiple accounts to support application structure changes in the APAC region",
+        "Managed and optimized 10+ cloud servers by configuring crontab jobs, archiving logs, ensuring efficient disk management, and using Jenkins CI/CD pipelines for source code deployment, backups, and memory alerts",
+        "Generated 20+ detailed reports with RReport, optimizing backend processes through complex SQL and PL/SQL queries",
+        "Enhanced Finacle's functionality for an investment banking firm by customizing 100+ web pages and menus using JavaScript and JSPs"
       ],
-      skills: ["Python", "React", "TypeScript", "Supabase", "PostgreSQL", "D3.js", "OpenWeather API", "Cloudflare", "Vercel", "Machine Learning"]
+      skills: ["SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle", "RReport", "JSP"]
     },
     {
       title: "Senior Software Engineer",
@@ -37,19 +36,20 @@ const Experience = () => {
       skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
     },
     {
-      title: "Software Engineer",
-      company: "Infosys Ltd.",
-      location: "Pune, India",
-      period: "August 2019 – July 2021",
-      type: "Full-time",
-      current: false,
+      title: "AI Software Engineer Intern",
+      company: "Volithost LLC",
+      location: "Florida, United States",
+      period: "May 2025 – August 2025",
+      type: "Internship",
+      current: true,
       achievements: [
-        "Maintained OLAP data and production environment reliability for Finacle e-banking by replicating and creating 50+ databases across multiple accounts to support application structure changes in the APAC region",
-        "Managed and optimized 10+ cloud servers by configuring crontab jobs, archiving logs, ensuring efficient disk management, and using Jenkins CI/CD pipelines for source code deployment, backups, and memory alerts",
-        "Generated 20+ detailed reports with RReport, optimizing backend processes through complex SQL and PL/SQL queries",
-        "Enhanced Finacle's functionality for an investment banking firm by customizing 100+ web pages and menus using JavaScript and JSPs"
+        "Spearheading the development of a Sales Analytical Tool (MVP) for Get Up and Go Kayaking, enabling data-driven business insights from real-time weather and booking data",
+        "Designed a React + TypeScript frontend and deployed secure backend APIs using Python, Supabase, and PostgreSQL to serve filtered booking and weather data to the frontend",
+        "Integrated OpenWeather API to collect real-time weather metrics and correlate them with booking trends for predictive insights",
+        "Implemented visual dashboards using D3.js-style charts and deployed scalable infrastructure via Cloudflare and Vercel",
+        "Applied EDA and ML techniques, including time-series forecasting and customer segmentation, to support predictive analytics and strategic decisions"
       ],
-      skills: ["SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle", "RReport", "JSP"]
+      skills: ["Python", "React", "TypeScript", "Supabase", "PostgreSQL", "D3.js", "OpenWeather API", "Cloudflare", "Vercel", "Machine Learning"]
     }
   ];
 
