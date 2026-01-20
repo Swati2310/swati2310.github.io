@@ -1,51 +1,60 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, BarChart3, Music, Dumbbell } from "lucide-react";
+import { BarChart3, Music, Database } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
       title: "NYC Crime Report Analysis in R",
-      category: "R | Statistics | Machine Learning Algorithms | Exploratory Data Analysis | Data Visualization",
-      description: "Led borough-level crime pattern prediction in NYC using R, implementing advanced machine learning models (Random Forest, SVM, Decision Trees) with Random Forest achieving 97.24% test accuracy.",
-      technologies: ["R", "Statistics", "Machine Learning", "Random Forest", "SVM", "Decision Trees"],
+      technologies: ["R", "Statistics", "Machine Learning", "Random Forest", "SVM", "Decision Trees", "EDA", "Data Visualization"],
       icon: <BarChart3 className="w-6 h-6" />,
-      color: "primary"
+      color: "primary",
+      count: "8"
     },
     {
       title: "Sparkify: Music App Churn Prediction",
-      category: "Python | PySpark | Scikit-learn | Apache Kafka",
-      description: "Developed a data streaming pipeline from Kafka cluster and Hadoop Distributed File System (HDFS) as a data store. Predicted customer churn with an F1 score of 0.8996 for the fictitious music streaming service using PySpark.",
-      technologies: ["Python", "PySpark", "Scikit-learn", "Apache Kafka", "Hadoop", "Machine Learning"],
+      technologies: ["Python", "PySpark", "Scikit-learn", "Apache Kafka", "Hadoop", "Machine Learning", "Data Streaming", "HDFS"],
       icon: <Music className="w-6 h-6" />,
-      color: "accent"
+      color: "accent",
+      count: "8"
     },
     {
       title: "Fitness Center Database Management System",
-      category: "Python | MySQL | Streamlit",
-      description: "Designed and implemented database system for a fitness center, incorporating over 10 entities and relationships with 45+ tuples using EER diagrams and applying agile methodologies throughout the development phase with targeted business queries for data insights.",
-      technologies: ["Python", "MySQL", "Streamlit", "Database Design", "SQL", "Data Modeling"],
-      icon: <Dumbbell className="w-6 h-6" />,
-      color: "secondary"
+      technologies: ["Python", "MySQL", "Streamlit", "Database Design", "SQL", "Data Modeling", "EER Diagrams"],
+      icon: <Database className="w-6 h-6" />,
+      color: "secondary",
+      count: "7"
     }
   ];
 
   const getColorClasses = (color: string) => {
     switch (color) {
       case 'primary':
-        return 'bg-primary/20 text-primary';
+        return 'bg-primary/20 text-primary border-primary/30';
       case 'accent':
-        return 'bg-accent/20 text-accent';
+        return 'bg-accent/20 text-accent border-accent/30';
       case 'secondary':
-        return 'bg-secondary/40 text-secondary-foreground';
+        return 'bg-secondary/40 text-secondary-foreground border-secondary/30';
       default:
-        return 'bg-primary/20 text-primary';
+        return 'bg-primary/20 text-primary border-primary/30';
+    }
+  };
+
+  const getBadgeColor = (color: string) => {
+    switch (color) {
+      case 'primary':
+        return 'hover:bg-primary hover:text-primary-foreground';
+      case 'accent':
+        return 'hover:bg-accent hover:text-accent-foreground';
+      case 'secondary':
+        return 'hover:bg-secondary hover:text-secondary-foreground';
+      default:
+        return 'hover:bg-primary hover:text-primary-foreground';
     }
   };
 
   return (
-    <section id="projects" className="py-20 px-6">
+    <section id="projects" className="py-20 px-6 bg-secondary/5">
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
@@ -56,64 +65,41 @@ const Projects = () => {
         </div>
         
         {/* Projects Grid */}
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-slide-in-right"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
-                <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300`}>
-                    {project.icon}
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300 border`}>
+                      {project.icon}
+                    </div>
+                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
                       {project.title}
                     </CardTitle>
-                    <p className="text-sm text-accent font-medium mb-3">
-                      {project.category}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      {project.description}
-                    </p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-2xl font-bold text-primary">{project.count}+</div>
+                    <div className="text-xs text-muted-foreground">Technologies</div>
                   </div>
                 </div>
               </CardHeader>
               
               <CardContent>
-                <div className="space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge 
-                        key={techIndex} 
-                        variant="outline" 
-                        className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  
-                  <div className="flex gap-3 pt-2">
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="group hover:bg-primary hover:border-primary"
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, techIndex) => (
+                    <Badge 
+                      key={techIndex} 
+                      variant="secondary" 
+                      className={`transition-colors cursor-default text-xs ${getBadgeColor(project.color)}`}
                     >
-                      <Github className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                      View Code
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="group hover:bg-accent hover:border-accent"
-                    >
-                      <ExternalLink className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                      Live Demo
-                    </Button>
-                  </div>
+                      {tech}
+                    </Badge>
+                  ))}
                 </div>
               </CardContent>
             </Card>
