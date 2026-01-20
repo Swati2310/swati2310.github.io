@@ -5,8 +5,8 @@ const Hero = () => {
   const downloadResume = () => {
     // Create a link to download the resume PDF
     const link = document.createElement('a');
-    link.href = '/lovable-uploads/Swati_Resume.pdf';
-    link.download = 'Swati_Resume.pdf';
+    link.href = '/lovable-uploads/FNU_SWATI_RESUME.pdf';
+    link.download = 'FNU_SWATI_RESUME.pdf';
     link.click();
   };
 
