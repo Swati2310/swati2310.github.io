@@ -9,7 +9,8 @@ const Projects = () => {
       technologies: ["Python", "Docker", "FastAPI", "LangChain", "EmbeddingGemma", "Weaviate", "OpenWebUI", "Salesforce BLIP", "Qwen 2.5 VLM"],
       icon: <Globe className="w-6 h-6" />,
       color: "primary",
-      count: "9"
+      count: "9",
+      backgroundImage: "/Attached_image.png"
     },
     {
       title: "Netflix Recommender System at Scale",
@@ -83,39 +84,60 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-slide-in-right"
+              className={`relative overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-slide-in-right ${
+                project.backgroundImage ? '' : 'gradient-card'
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300 border`}>
-                      {project.icon}
-                    </div>
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                      {project.title}
-                    </CardTitle>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-primary">{project.count}+</div>
-                    <div className="text-xs text-muted-foreground">Technologies</div>
-                  </div>
-                </div>
-              </CardHeader>
+              {/* Background Image with Overlay */}
+              {project.backgroundImage && (
+                <>
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                    style={{ backgroundImage: `url(${project.backgroundImage})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-background/80" />
+                  <div className="absolute inset-0 bg-background/60 group-hover:bg-background/50 transition-colors duration-500" />
+                </>
+              )}
               
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge 
-                      key={techIndex} 
-                      variant="secondary" 
-                      className={`transition-colors cursor-default text-xs ${getBadgeColor(project.color)}`}
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
+              {/* Content */}
+              <div className="relative z-10">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300 border backdrop-blur-sm bg-background/80`}>
+                        {project.icon}
+                      </div>
+                      <CardTitle className={`text-lg group-hover:text-primary transition-colors ${project.backgroundImage ? 'text-foreground drop-shadow-sm' : ''}`}>
+                        {project.title}
+                      </CardTitle>
+                    </div>
+                    <div className="text-right">
+                      <div className={`text-2xl font-bold ${project.backgroundImage ? 'text-primary drop-shadow-sm' : 'text-primary'}`}>
+                        {project.count}+
+                      </div>
+                      <div className={`text-xs ${project.backgroundImage ? 'text-foreground/80 drop-shadow-sm' : 'text-muted-foreground'}`}>
+                        Technologies
+                      </div>
+                    </div>
+                  </div>
+                </CardHeader>
+                
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge 
+                        key={techIndex} 
+                        variant="secondary" 
+                        className={`transition-colors cursor-default text-xs backdrop-blur-sm bg-background/80 border-border/50 ${getBadgeColor(project.color)}`}
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </div>
             </Card>
           ))}
         </div>
