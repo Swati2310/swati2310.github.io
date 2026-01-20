@@ -93,11 +93,11 @@ const Projects = () => {
               {project.backgroundImage && (
                 <>
                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-60 transition-opacity duration-500"
                     style={{ backgroundImage: `url(${project.backgroundImage})` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-background/80" />
-                  <div className="absolute inset-0 bg-background/60 group-hover:bg-background/50 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/3 to-background/50" />
+                  <div className="absolute inset-0 bg-background/40 group-hover:bg-background/30 transition-colors duration-500" />
                 </>
               )}
               
