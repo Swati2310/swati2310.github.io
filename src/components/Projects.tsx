@@ -1,28 +1,42 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BarChart3, Music, Database } from "lucide-react";
+import { BarChart3, Database, Globe, Film, TrendingUp } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: "NYC Crime Report Analysis in R",
-      technologies: ["R", "Statistics", "Machine Learning", "Random Forest", "SVM", "Decision Trees", "EDA", "Data Visualization"],
-      icon: <BarChart3 className="w-6 h-6" />,
+      title: "Cross-Lingual Document Retrieval System with Multimodal AI",
+      technologies: ["Python", "Docker", "FastAPI", "LangChain", "EmbeddingGemma", "Weaviate", "OpenWebUI", "Salesforce BLIP", "Qwen 2.5 VLM"],
+      icon: <Globe className="w-6 h-6" />,
       color: "primary",
-      count: "8"
+      count: "9"
     },
     {
-      title: "Sparkify: Music App Churn Prediction",
-      technologies: ["Python", "PySpark", "Scikit-learn", "Apache Kafka", "Hadoop", "Machine Learning", "Data Streaming", "HDFS"],
-      icon: <Music className="w-6 h-6" />,
+      title: "Netflix Recommender System at Scale",
+      technologies: ["Python", "PySpark", "Spark MLlib ALS", "MPI", "Slurm", "SeaWulf HPC", "NeuMF", "Parquet", "Numba", "PyTorch", "AWS/GPFS"],
+      icon: <Film className="w-6 h-6" />,
       color: "accent",
+      count: "11"
+    },
+    {
+      title: "Real-Time Demand Forecasting with Advanced ML Pipeline",
+      technologies: ["Python", "XGBoost", "Scikit-learn", "Pandas", "NumPy", "ONNX", "FastAPI"],
+      icon: <TrendingUp className="w-6 h-6" />,
+      color: "primary",
+      count: "7"
+    },
+    {
+      title: "NYC Crime Pattern Analysis & Predictive Modeling",
+      technologies: ["R", "Statistics", "Machine Learning", "EDA", "Data Visualization", "Random Forest", "SVM", "Decision Trees"],
+      icon: <BarChart3 className="w-6 h-6" />,
+      color: "secondary",
       count: "8"
     },
     {
-      title: "Fitness Center Database Management System",
-      technologies: ["Python", "MySQL", "Streamlit", "Database Design", "SQL", "Data Modeling", "EER Diagrams"],
+      title: "Enterprise Fitness Center Database Management System",
+      technologies: ["Python", "MySQL", "Streamlit", "SQL/PL-SQL", "Database Design", "EER Diagrams", "Data Modeling"],
       icon: <Database className="w-6 h-6" />,
-      color: "secondary",
+      color: "accent",
       count: "7"
     }
   ];
