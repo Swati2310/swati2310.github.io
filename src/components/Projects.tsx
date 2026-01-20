@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BarChart3, Database, Globe, Film, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Github, ExternalLink, BarChart3, Database, Globe, Film, TrendingUp } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -80,14 +81,14 @@ const Projects = () => {
         </div>
         
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-8">
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className={`relative overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-slide-in-right ${
-                project.backgroundImage ? '' : 'gradient-card'
+              className={`relative overflow-hidden gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-fade-in-up ${
+                project.backgroundImage ? '' : ''
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Background Image with Overlay */}
               {project.backgroundImage && (
@@ -104,37 +105,53 @@ const Projects = () => {
               {/* Content */}
               <div className="relative z-10">
                 <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300 border backdrop-blur-sm bg-background/80`}>
-                        {project.icon}
-                      </div>
-                      <CardTitle className={`text-lg group-hover:text-primary transition-colors ${project.backgroundImage ? 'text-foreground drop-shadow-sm' : ''}`}>
+                  <div className="flex items-start gap-4">
+                    <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300`}>
+                      {project.icon}
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
                         {project.title}
                       </CardTitle>
-                    </div>
-                    <div className="text-right">
-                      <div className={`text-2xl font-bold ${project.backgroundImage ? 'text-primary drop-shadow-sm' : 'text-primary'}`}>
-                        {project.count}+
-                      </div>
-                      <div className={`text-xs ${project.backgroundImage ? 'text-foreground/80 drop-shadow-sm' : 'text-muted-foreground'}`}>
-                        Technologies
-                      </div>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        {project.count}+ Technologies
+                      </p>
                     </div>
                   </div>
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge 
-                        key={techIndex} 
-                        variant="secondary" 
-                        className={`transition-colors cursor-default text-xs backdrop-blur-sm bg-background/80 border-border/50 ${getBadgeColor(project.color)}`}
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge 
+                          key={techIndex} 
+                          variant="outline" 
+                          className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    <div className="flex gap-3 pt-2">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="group hover:bg-primary hover:border-primary"
                       >
-                        {tech}
-                      </Badge>
-                    ))}
+                        <Github className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                        View Code
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="group hover:bg-accent hover:border-accent"
+                      >
+                        <ExternalLink className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                        Live Demo
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </div>
