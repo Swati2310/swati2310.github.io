@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, BarChart3, Database, Globe, Film, TrendingUp } from "lucide-react";
+import { Github, BarChart3, Database, Globe, Film, TrendingUp } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -142,14 +142,6 @@ const Projects = () => {
                       >
                         <Github className="w-4 h-4 group-hover:rotate-12 transition-transform" />
                         View Code
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="group hover:bg-accent hover:border-accent"
-                      >
-                        <ExternalLink className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                        Live Demo
                       </Button>
                     </div>
                   </div>
