@@ -26,7 +26,8 @@ const Projects = () => {
       technologies: ["Python", "XGBoost", "Scikit-learn", "Pandas", "NumPy", "ONNX", "FastAPI"],
       icon: <TrendingUp className="w-6 h-6" />,
       color: "primary",
-      count: "7"
+      count: "7",
+      backgroundImage: "/demand-forecasting.jpg"
     },
     {
       title: "NYC Crime Pattern Analysis & Predictive Modeling",
