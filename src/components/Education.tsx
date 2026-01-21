@@ -9,7 +9,8 @@ const Education = () => {
       period: "August 2024 – May 2026",
       location: "New York, USA",
       type: "master",
-      current: true
+      current: true,
+      image: "/sbu-university.jpg"
     },
     {
       degree: "Bachelor of Technology in Computer Science",
@@ -18,7 +19,8 @@ const Education = () => {
       location: "India",
       gpa: "8.97/10.00",
       type: "bachelor",
-      current: false
+      current: false,
+      image: "/chitkara-university.jpg"
     }
   ];
 
@@ -75,12 +77,23 @@ const Education = () => {
                     </div>
                   </div>
                   
-                  {/* Status Badge */}
-                  {edu.current && (
-                    <div className="flex-shrink-0">
-                      <div className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full">
-                        Current
-                      </div>
+                  {/* Image + Status Badge */}
+                  {(edu.image || edu.current) && (
+                    <div className="flex-shrink-0 flex flex-col items-end gap-3">
+                      {edu.image && (
+                        <div className="w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 rounded-xl overflow-hidden border border-border/60 shadow-md">
+                          <img
+                            src={edu.image}
+                            alt={edu.institution}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
+                      {edu.current && (
+                        <div className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full">
+                          Current
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
