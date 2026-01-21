@@ -73,24 +73,34 @@ const Gallery = () => {
 
         {/* Full-Width Photo Grid - Show all images */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
-          {galleryFiles.map((src, index) => (
-            <div
-              key={`${src}-${index}`}
-              className="group animate-fade-in-up overflow-hidden"
-              style={{ animationDelay: `${index * 0.03}s` }}
-            >
-              <div className="relative overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-muted/20 aspect-square">
-                <img
-                  src={src}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                  onLoad={handleImageLoad}
-                  onError={() => handleImageError(src)}
-                />
+          {galleryFiles.map((src, index) => {
+            // Ensure the path is correct - remove any leading issues
+            const imagePath = src.startsWith('/') ? src : `/${src}`;
+            return (
+              <div
+                key={`gallery-img-${index}-${imagePath}`}
+                className="group animate-fade-in-up overflow-hidden"
+                style={{ animationDelay: `${index * 0.03}s` }}
+              >
+                <div className="relative overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-muted/20 aspect-square">
+                  <img
+                    src={imagePath}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    loading={index < 10 ? "eager" : "lazy"}
+                    onLoad={handleImageLoad}
+                    onError={(e) => {
+                      handleImageError(imagePath);
+                      console.error(`Image failed to load: ${imagePath}`, e);
+                      // Log the actual error details
+                      const target = e.target as HTMLImageElement;
+                      console.error(`Failed image src: ${target.src}, naturalWidth: ${target.naturalWidth}, naturalHeight: ${target.naturalHeight}`);
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
