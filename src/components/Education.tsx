@@ -40,10 +40,23 @@ const Education = () => {
           {education.map((edu, index) => (
             <Card 
               key={index} 
-              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-slide-in-right"
+              className={`relative overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-slide-in-right ${
+                edu.image ? '' : 'gradient-card'
+              }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <CardContent className="p-8">
+              {/* Background image for each institution */}
+              {edu.image && (
+                <>
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80 group-hover:opacity-90 transition-opacity duration-500"
+                    style={{ backgroundImage: `url(${edu.image})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/80 to-background/85" />
+                </>
+              )}
+
+              <CardContent className="relative z-10 p-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                   {/* Education Info */}
                   <div className="flex items-start gap-4 flex-1">
