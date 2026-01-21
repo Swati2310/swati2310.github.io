@@ -60,29 +60,29 @@ const Education = () => {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                   {/* Education Info */}
                   <div className="flex items-start gap-4 flex-1">
-                    <div className={`p-3 rounded-lg ${edu.type === 'master' ? 'bg-primary/20 text-primary' : 'bg-accent/20 text-accent'} group-hover:scale-110 transition-transform duration-300`}>
-                      <GraduationCap className="w-6 h-6" />
+                    <div className={`p-3 rounded-lg ${edu.type === 'master' ? 'bg-primary/25 text-white' : 'bg-accent/25 text-white'} group-hover:scale-110 transition-transform duration-300`}>
+                      <GraduationCap className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-semibold mb-2 text-white drop-shadow-md group-hover:text-primary-foreground transition-colors">
                         {edu.degree}
                       </h3>
-                      <p className="text-muted-foreground font-medium mb-4">
+                      <p className="text-white/90 font-medium mb-4 drop-shadow-sm">
                         {edu.institution}
                       </p>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                        <div className="flex items-center gap-3 text-muted-foreground">
-                          <Calendar className="w-4 h-4 text-primary" />
+                        <div className="flex items-center gap-3 text-white/90 drop-shadow-sm">
+                          <Calendar className="w-4 h-4 text-primary/90" />
                           <span className="text-sm">{edu.period}</span>
                         </div>
-                        <div className="flex items-center gap-3 text-muted-foreground">
-                          <MapPin className="w-4 h-4 text-accent" />
+                        <div className="flex items-center gap-3 text-white/90 drop-shadow-sm">
+                          <MapPin className="w-4 h-4 text-accent/90" />
                           <span className="text-sm">{edu.location}</span>
                         </div>
                         {edu.gpa && (
-                          <div className="flex items-center gap-3 text-muted-foreground">
-                            <Award className="w-4 h-4 text-primary" />
+                          <div className="flex items-center gap-3 text-white/90 drop-shadow-sm">
+                            <Award className="w-4 h-4 text-primary/90" />
                             <span className="text-sm">GPA: {edu.gpa}</span>
                           </div>
                         )}
