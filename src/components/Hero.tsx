@@ -54,12 +54,14 @@ const Hero = () => {
               </div>
             </div>
             
-            <p className="text-lg md:text-xl font-serif italic text-white/90 drop-shadow-md mb-1">
-              Hey I am
-            </p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
-              SWATI
-            </h1>
+            <div className="animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
+              <p className="text-2xl md:text-3xl font-serif italic text-primary drop-shadow-md mb-1">
+                Hey I am
+              </p>
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
+                SWATI !
+              </h1>
+            </div>
             <p className="text-xl md:text-2xl text-white drop-shadow-lg mb-6">
               AI Software Engineer & Data Science Expert
             </p>
