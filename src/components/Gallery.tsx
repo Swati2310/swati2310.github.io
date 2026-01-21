@@ -1,7 +1,5 @@
-import { useState } from "react";
-
 const Gallery = () => {
-  // Photos live in /public/gallery – explicitly list all images
+  // Photos live in /public/gallery – explicitly list all 25 pictures + profile
   const galleryFiles = [
     "/gallery/pic1.jpg",
     "/gallery/pic2.jpg",
@@ -31,26 +29,6 @@ const Gallery = () => {
     "/gallery/profile.jpg"
   ];
 
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-  const [errorImages, setErrorImages] = useState<Set<string>>(new Set());
-
-  const photos = galleryFiles.map((src, index) => ({
-    src,
-    title: `Glimpse ${index + 1}`,
-    description: "A small moment captured from my journey."
-  }));
-
-  const handleImageLoad = (src: string) => {
-    setLoadedImages(prev => new Set([...prev, src]));
-  };
-
-  const handleImageError = (src: string) => {
-    setErrorImages(prev => new Set([...prev, src]));
-  };
-
-  // Filter out images that failed to load
-  const validPhotos = photos.filter(photo => !errorImages.has(photo.src));
-
   return (
     <section id="gallery" className="py-12 px-4 sm:px-6 bg-secondary/5 min-h-screen">
       <div className="w-full">
@@ -64,30 +42,25 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Full-Width Photo Grid */}
+        {/* Full-Width Photo Grid - Show all 26 images */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
-          {validPhotos.map((photo, index) => (
+          {galleryFiles.map((src, index) => (
             <div
-              key={photo.src}
+              key={src}
               className="group animate-fade-in-up overflow-hidden"
               style={{ animationDelay: `${index * 0.03}s` }}
             >
               <div className="overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-muted/20">
                 <img
-                  src={photo.src}
-                  alt={photo.title}
-                  onLoad={() => handleImageLoad(photo.src)}
-                  onError={() => handleImageError(photo.src)}
-                  className={`w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 aspect-square ${
-                    loadedImages.has(photo.src) ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  src={src}
+                  alt={`Gallery image ${index + 1}`}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 aspect-square"
                   loading="lazy"
+                  onError={(e) => {
+                    // Log error for debugging but don't hide the image
+                    console.warn(`Failed to load image: ${src}`);
+                  }}
                 />
-                {!loadedImages.has(photo.src) && !errorImages.has(photo.src) && (
-                  <div className="w-full aspect-square bg-muted/30 animate-pulse flex items-center justify-center">
-                    <div className="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
-                  </div>
-                )}
               </div>
             </div>
           ))}
