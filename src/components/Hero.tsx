@@ -56,14 +56,14 @@ const Hero = () => {
             
             <div className="animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
               <p className="text-2xl md:text-3xl font-serif italic text-primary drop-shadow-md mb-1">
-                Hey I am
+                Hey there! 
               </p>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
-                SWATI !
+                 Swati here!
               </h1>
             </div>
             <p className="text-xl md:text-2xl text-white drop-shadow-lg mb-6">
-              AI Software Engineer & Data Science Expert
+            Data Scientist and AI Software Engineer | Machine Learning | Gen AI | DevOps | Cloud Technologies. 
             </p>
             
             {/* Location and Contact */}
