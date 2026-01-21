@@ -11,13 +11,13 @@ const Experience = () => {
       type: "Internship",
       current: true,
       achievements: [
-        "Spearheading the development of a Sales Analytical Tool (MVP) for Get Up and Go Kayaking, enabling data-driven business insights from real-time weather and booking data",
-        "Designed a React + TypeScript frontend and deployed secure backend APIs using Python, Supabase, and PostgreSQL to serve filtered booking and weather data to the frontend",
-        "Integrated OpenWeather API to collect real-time weather metrics and correlate them with booking trends for predictive insights",
-        "Implemented visual dashboards using D3.js-style charts and deployed scalable infrastructure via Cloudflare and Vercel",
-        "Applied EDA and ML techniques, including time-series forecasting and customer segmentation, to support predictive analytics and strategic decisions"
+        "Built XGBoost regression models for demand forecasting achieving 85% R² accuracy and 7.2 MAE while handling 121-day dataset with 66.9% missing data through advanced interpolation strategies",
+        "Engineered comprehensive feature pipeline creating 15+ features including time-series lags (3, 5, 7 days), rolling statistics, weather correlations, and temporal indicators for ML model training",
+        "Implemented advanced data preprocessing handling missing values, outlier detection using IQR methodology, and automated feature engineering pipeline for real-time inference",
+        "Constructed production ML infrastructure exporting models to ONNX format, implementing model serialization with metadata management, and deploying live forecasting API with configurable horizons (1-30 days)",
+        "Maximized model performance through hyperparameter tuning, cross-validation strategies, and feature selection achieving improved accuracy over baseline models (Prophet R² = -229 vs XGBoost R² = 0.85)"
       ],
-      skills: ["Python", "React", "TypeScript", "Supabase", "PostgreSQL", "D3.js", "OpenWeather API", "Cloudflare", "Vercel", "Machine Learning"]
+      skills: ["Python", "XGBoost", "Scikit-learn", "Pandas", "NumPy", "ONNX", "FastAPI", "Time Series", "Feature Engineering", "Model Deployment"]
     },
     {
       title: "Senior Software Engineer",
