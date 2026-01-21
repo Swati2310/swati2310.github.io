@@ -55,11 +55,9 @@ const Hero = () => {
             </div>
             
             <div className="animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
-              <p className="text-2xl md:text-3xl font-serif italic text-primary drop-shadow-md mb-1">
-                Hey there! 
-              </p>
+        
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
-                 Swati here!
+                SWATI here!
               </h1>
             </div>
             <p className="text-xl md:text-2xl text-white drop-shadow-lg mb-6">
