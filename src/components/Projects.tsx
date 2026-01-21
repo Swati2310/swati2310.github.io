@@ -94,11 +94,11 @@ const Projects = () => {
               {project.backgroundImage && (
                 <>
                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-60 transition-opacity duration-500"
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-85 transition-opacity duration-500"
                     style={{ backgroundImage: `url(${project.backgroundImage})` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/3 to-background/50" />
-                  <div className="absolute inset-0 bg-background/40 group-hover:bg-background/30 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-accent/2 to-background/30" />
+                  <div className="absolute inset-0 bg-background/25 group-hover:bg-background/20 transition-colors duration-500" />
                 </>
               )}
               
@@ -106,14 +106,14 @@ const Projects = () => {
               <div className="relative z-10">
                 <CardHeader className="pb-4">
                   <div className="flex items-start gap-4">
-                    <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm bg-background/90 border-2`}>
                       {project.icon}
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                      <CardTitle className={`text-xl mb-2 group-hover:text-primary transition-colors ${project.backgroundImage ? 'text-foreground drop-shadow-lg font-bold' : ''}`}>
                         {project.title}
                       </CardTitle>
-                      <p className="text-sm text-muted-foreground mb-3">
+                      <p className={`text-sm mb-3 ${project.backgroundImage ? 'text-foreground/90 drop-shadow-md font-medium' : 'text-muted-foreground'}`}>
                         {project.count}+ Technologies
                       </p>
                     </div>
@@ -127,7 +127,9 @@ const Projects = () => {
                         <Badge 
                           key={techIndex} 
                           variant="outline" 
-                          className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs"
+                          className={`hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs ${
+                            project.backgroundImage ? 'backdrop-blur-sm bg-background/90 border-2 font-medium' : ''
+                          }`}
                         >
                           {tech}
                         </Badge>
@@ -138,7 +140,9 @@ const Projects = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="group hover:bg-primary hover:border-primary"
+                        className={`group hover:bg-primary hover:border-primary ${
+                          project.backgroundImage ? 'backdrop-blur-sm bg-background/90 border-2 font-semibold shadow-lg' : ''
+                        }`}
                       >
                         <Github className="w-4 h-4 group-hover:rotate-12 transition-transform" />
                         View Code
