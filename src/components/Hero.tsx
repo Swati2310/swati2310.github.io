@@ -57,7 +57,7 @@ const Hero = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-4 text-primary drop-shadow-xl">
               SWATI
             </h1>
-            <p className="text-xl md:text-2xl text-accent drop-shadow-lg mb-6">
+            <p className="text-xl md:text-2xl text-white drop-shadow-lg mb-6">
               AI Software Engineer & Data Science Expert
             </p>
             
