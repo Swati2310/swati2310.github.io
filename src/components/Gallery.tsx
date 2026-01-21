@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Image as ImageIcon } from "lucide-react";
 
 const Gallery = () => {
@@ -32,28 +31,27 @@ const Gallery = () => {
         {/* Photo Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((photo, index) => (
-            <Card
+            <figure
               key={index}
-              className="overflow-hidden border border-border/60 hover:border-primary/60 transition-all duration-300 hover:shadow-primary group animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="relative overflow-hidden">
+              <div className="overflow-hidden rounded-xl shadow-md border border-border/60">
                 <img
                   src={photo.src}
                   alt={photo.title}
-                  className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full aspect-[4/3] object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent opacity-90" />
               </div>
-              <CardContent className="pt-4">
-                <h3 className="text-lg font-semibold mb-1 text-foreground">
+              <figcaption className="mt-3">
+                <h3 className="text-sm font-medium text-foreground">
                   {photo.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   {photo.description}
                 </p>
-              </CardContent>
-            </Card>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
