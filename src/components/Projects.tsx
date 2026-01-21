@@ -81,12 +81,12 @@ const Projects = () => {
         </div>
         
         {/* Projects Grid */}
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={index} 
               className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
                 <div className="flex items-start gap-4">
