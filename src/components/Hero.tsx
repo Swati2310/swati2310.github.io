@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="relative gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-fade-in-up overflow-hidden">
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 group-hover:opacity-95 transition-opacity duration-500"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"
               style={{ backgroundImage: 'url(/nyc-skyline-bg.jpg)' }}
             />
             {/* Light overlay to keep text readable while showing skyline */}
