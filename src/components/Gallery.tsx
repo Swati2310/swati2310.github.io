@@ -2,29 +2,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Image as ImageIcon } from "lucide-react";
 
 const Gallery = () => {
-  // You can add/remove images here – they should live in the /public folder
-  const photos = [
-    {
-      src: "/nyc-skyline-bg.jpg",
-      title: "New York Skyline",
-      description: "Everyday inspiration from the city I call home"
-    },
-    {
-      src: "/demand-forecasting.jpg",
-      title: "Data in Motion",
-      description: "Visualization of patterns that drive decisions"
-    },
-    {
-      src: "/nyccrime.jpeg",
-      title: "City Stories in Data",
-      description: "Exploring patterns hidden in real-world maps"
-    },
-    {
-      src: "/database_fitness.png",
-      title: "Fitness & Systems",
-      description: "Balancing performance – in code and in life"
-    }
+  // Photos live in /public/gallery – you can freely add/remove files there (pic1.jpg, pic2.jpg, ...)
+  const galleryFiles = [
+    ...Array.from({ length: 25 }, (_, i) => `/gallery/pic${i + 1}.jpg`),
+    "/gallery/profile.jpg"
   ];
+
+  const photos = galleryFiles.map((src, index) => ({
+    src,
+    title: `Glimpse ${index + 1}`,
+    description: "A small moment captured from my journey."
+  }));
 
   return (
     <section id="gallery" className="py-20 px-6 bg-secondary/5">
@@ -42,7 +30,7 @@ const Gallery = () => {
         </div>
 
         {/* Photo Grid */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((photo, index) => (
             <Card
               key={index}

@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, GraduationCap, Briefcase, FolderOpen, Award, Mail } from "lucide-react";
+import { Menu, X, Home, GraduationCap, Briefcase, FolderOpen, Award, Mail, Image as ImageIcon } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { id: 'hero', label: 'Home', icon: <Home className="w-4 h-4" /> },
@@ -17,6 +20,9 @@ const Navigation = () => {
   ];
 
   useEffect(() => {
+    // Only run scroll-based section tracking on the main ("/") page
+    if (location.pathname !== "/") return;
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
@@ -40,7 +46,7 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -82,6 +88,18 @@ const Navigation = () => {
                   {item.label}
                 </Button>
               ))}
+              <Button
+                variant={location.pathname === "/gallery" ? "hero" : "ghost"}
+                size="sm"
+                onClick={() => {
+                  navigate("/gallery");
+                  setIsOpen(false);
+                }}
+                className="transition-all duration-300 hover:scale-105"
+              >
+                <ImageIcon className="w-4 h-4" />
+                Gallery
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -116,6 +134,18 @@ const Navigation = () => {
                     {item.label}
                   </Button>
                 ))}
+                <Button
+                  variant={location.pathname === "/gallery" ? "hero" : "ghost"}
+                  size="lg"
+                  onClick={() => {
+                    navigate("/gallery");
+                    setIsOpen(false);
+                  }}
+                  className="w-full justify-start gap-3 text-left"
+                >
+                  <ImageIcon className="w-4 h-4" />
+                  Gallery
+                </Button>
               </div>
             </div>
           </div>
