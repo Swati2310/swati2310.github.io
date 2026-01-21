@@ -42,7 +42,8 @@ const Projects = () => {
       technologies: ["Python", "MySQL", "Streamlit", "SQL/PL-SQL", "Database Design", "EER Diagrams", "Data Modeling"],
       icon: <Database className="w-6 h-6" />,
       color: "accent",
-      count: "7"
+      count: "7",
+      backgroundImage: "/database_fitness.png"
     }
   ];
 
