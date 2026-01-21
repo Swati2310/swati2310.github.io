@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
+
 const Gallery = () => {
-  // Photos live in /public/gallery – explicitly list all 25 pictures + profile
+  // Generate all image paths - 25 pics + profile
   const galleryFiles = [
     "/gallery/pic1.jpg",
     "/gallery/pic2.jpg",
@@ -29,6 +31,29 @@ const Gallery = () => {
     "/gallery/profile.jpg"
   ];
 
+  const [loadedCount, setLoadedCount] = useState(0);
+  const [errorCount, setErrorCount] = useState(0);
+
+  useEffect(() => {
+    console.log(`Gallery: Total images: ${galleryFiles.length}`);
+  }, []);
+
+  const handleImageLoad = () => {
+    setLoadedCount(prev => {
+      const newCount = prev + 1;
+      console.log(`Gallery: Loaded ${newCount}/${galleryFiles.length} images`);
+      return newCount;
+    });
+  };
+
+  const handleImageError = (src: string) => {
+    setErrorCount(prev => {
+      const newCount = prev + 1;
+      console.error(`Gallery: Failed to load image ${newCount}: ${src}`);
+      return newCount;
+    });
+  };
+
   return (
     <section id="gallery" className="py-12 px-4 sm:px-6 bg-secondary/5 min-h-screen">
       <div className="w-full">
@@ -40,26 +65,28 @@ const Gallery = () => {
           <p className="text-lg md:text-xl text-muted-foreground">
             Moments captured through photos from my past experiences and adventures.
           </p>
+          {/* Debug info - remove in production if needed */}
+          <p className="text-sm text-muted-foreground mt-2">
+            Showing {galleryFiles.length} images ({loadedCount} loaded, {errorCount} errors)
+          </p>
         </div>
 
-        {/* Full-Width Photo Grid - Show all 26 images */}
+        {/* Full-Width Photo Grid - Show all images */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
           {galleryFiles.map((src, index) => (
             <div
-              key={src}
+              key={`${src}-${index}`}
               className="group animate-fade-in-up overflow-hidden"
               style={{ animationDelay: `${index * 0.03}s` }}
             >
-              <div className="overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-muted/20">
+              <div className="relative overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-muted/20 aspect-square">
                 <img
                   src={src}
                   alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 aspect-square"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
-                  onError={(e) => {
-                    // Log error for debugging but don't hide the image
-                    console.warn(`Failed to load image: ${src}`);
-                  }}
+                  onLoad={handleImageLoad}
+                  onError={() => handleImageError(src)}
                 />
               </div>
             </div>
