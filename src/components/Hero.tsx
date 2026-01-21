@@ -38,8 +38,6 @@ const Hero = () => {
             
             {/* Content */}
             <div className="relative z-10">
-            {/* Frosted panel to keep dark theme text readable on image */}
-            <div className="rounded-2xl bg-background/55 backdrop-blur-sm border border-border/40 p-8 md:p-10">
             {/* Profile Photo */}
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -56,22 +54,22 @@ const Hero = () => {
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-primary drop-shadow-xl">
               SWATI
             </h1>
-            <p className="text-xl md:text-2xl text-primary mb-6">
+            <p className="text-xl md:text-2xl text-accent drop-shadow-lg mb-6">
               AI Software Engineer & Data Science Expert
             </p>
             
             {/* Location and Contact */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8 text-muted-foreground">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-sm border border-border/50">
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-foreground/90 drop-shadow-md">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/55 backdrop-blur-sm border border-primary/20">
                 <MapPin className="w-4 h-4 text-accent" />
-                <span className="font-medium text-foreground/80">New York, USA</span>
+                <span className="font-medium text-primary">New York, USA</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-sm border border-border/50">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/55 backdrop-blur-sm border border-primary/20">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="font-medium text-foreground/80">swati.swati@stonybrook.edu</span>
+                <span className="font-medium text-primary">swati.swati@stonybrook.edu</span>
               </div>
             </div>
             
@@ -121,7 +119,6 @@ const Hero = () => {
               <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               Download Resume
             </Button>
-            </div>
             </div>
           </div>
         </div>
