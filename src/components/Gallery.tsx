@@ -1,5 +1,3 @@
-import { Image as ImageIcon } from "lucide-react";
-
 const Gallery = () => {
   // Photos live in /public/gallery – you can freely add/remove files there (pic1.jpg, pic2.jpg, ...)
   const galleryFiles = [
@@ -14,44 +12,34 @@ const Gallery = () => {
   }));
 
   return (
-    <section id="gallery" className="py-20 px-6 bg-secondary/5">
-      <div className="container mx-auto max-w-5xl">
+    <section id="gallery" className="py-12 px-4 sm:px-6 bg-secondary/5 min-h-screen">
+      <div className="w-full">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl font-bold mb-4 text-primary flex items-center justify-center gap-3">
-            <ImageIcon className="w-7 h-7 text-accent" />
-            <span>Gallery – Through My Eyes</span>
+        <div className="text-center mb-12 animate-fade-in-up">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-primary">
+            FROM MY EYES
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A small visual journal of places, moments, and ideas that shape how I think about
-            data, design, and impact.
+          <p className="text-lg md:text-xl text-muted-foreground">
+            Moments captured through photos from my past experiences and adventures.
           </p>
         </div>
 
-        {/* Photo Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Full-Width Photo Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
           {photos.map((photo, index) => (
-            <figure
+            <div
               key={index}
-              className="group animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              className="group animate-fade-in-up overflow-hidden"
+              style={{ animationDelay: `${index * 0.03}s` }}
             >
-              <div className="overflow-hidden rounded-xl shadow-md border border-border/60">
+              <div className="overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300">
                 <img
                   src={photo.src}
                   alt={photo.title}
-                  className="w-full aspect-[4/3] object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 aspect-square"
                 />
               </div>
-              <figcaption className="mt-3">
-                <h3 className="text-sm font-medium text-foreground">
-                  {photo.title}
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {photo.description}
-                </p>
-              </figcaption>
-            </figure>
+            </div>
           ))}
         </div>
       </div>
