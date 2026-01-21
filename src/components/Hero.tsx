@@ -54,6 +54,9 @@ const Hero = () => {
               </div>
             </div>
             
+            <p className="text-lg md:text-xl font-serif italic text-white/90 drop-shadow-md mb-1">
+              Hey I am
+            </p>
             <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
               SWATI
             </h1>
