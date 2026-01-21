@@ -5,7 +5,6 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
-import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 
 const Portfolio = () => {
@@ -21,7 +20,6 @@ const Portfolio = () => {
         <Projects />
         <Skills />
         <Contact />
-        <Gallery />
       </main>
       <Footer />
     </div>
