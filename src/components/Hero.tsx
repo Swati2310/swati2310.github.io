@@ -27,7 +27,16 @@ const Hero = () => {
       <div className="container mx-auto px-6 flex items-center justify-center">
         <div className="max-w-2xl w-full">
           {/* Main card */}
-          <div className="gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-fade-in-up">
+          <div className="relative gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-fade-in-up overflow-hidden">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 group-hover:opacity-20 transition-opacity duration-500"
+              style={{ backgroundImage: 'url(/nyc-skyline-bg.jpg)' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
+            
+            {/* Content */}
+            <div className="relative z-10">
             {/* Profile Photo */}
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -109,6 +118,7 @@ const Hero = () => {
               <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               Download Resume
             </Button>
+            </div>
           </div>
         </div>
       </div>
