@@ -18,7 +18,8 @@ const Projects = () => {
       technologies: ["Python", "PySpark", "Spark MLlib ALS", "MPI", "Slurm", "SeaWulf HPC", "NeuMF", "Parquet", "Numba", "PyTorch", "AWS/GPFS"],
       icon: <Film className="w-6 h-6" />,
       color: "accent",
-      count: "11"
+      count: "11",
+      backgroundImage: "/Netflix-Recommendation-Engine-Working-StartupTalky.jpg"
     },
     {
       title: "Real-Time Demand Forecasting with Advanced ML Pipeline",
