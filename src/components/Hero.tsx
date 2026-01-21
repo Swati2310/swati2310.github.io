@@ -63,11 +63,11 @@ const Hero = () => {
             
             {/* Location and Contact */}
             <div className="flex flex-wrap justify-center gap-6 mb-8 text-foreground/90 drop-shadow-md">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/55 backdrop-blur-sm border border-primary/20">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-white/40 shadow-lg">
                 <MapPin className="w-4 h-4 text-accent" />
                 <span className="font-medium text-primary">New York, USA</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/55 backdrop-blur-sm border border-primary/20">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-white/40 shadow-lg">
                 <Mail className="w-4 h-4 text-primary" />
                 <span className="font-medium text-primary">swati.swati@stonybrook.edu</span>
               </div>
