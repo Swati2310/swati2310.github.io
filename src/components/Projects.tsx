@@ -85,72 +85,62 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className={`relative overflow-hidden gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-fade-in-up ${
-                project.backgroundImage ? '' : ''
-              }`}
+              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Background Image with Overlay */}
-              {project.backgroundImage && (
-                <>
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-85 transition-opacity duration-500"
-                    style={{ backgroundImage: `url(${project.backgroundImage})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-accent/2 to-background/30" />
-                  <div className="absolute inset-0 bg-background/25 group-hover:bg-background/20 transition-colors duration-500" />
-                </>
-              )}
+              <CardHeader className="pb-4">
+                <div className="flex items-start gap-4">
+                  <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300`}>
+                    {project.icon}
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </CardTitle>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {project.count}+ Technologies
+                    </p>
+                  </div>
+                </div>
+              </CardHeader>
               
-              {/* Content */}
-              <div className="relative z-10">
-                <CardHeader className="pb-4">
-                  <div className="flex items-start gap-4">
-                    <div className={`p-3 rounded-lg ${getColorClasses(project.color)} group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm bg-background/90 border-2`}>
-                      {project.icon}
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Project Image */}
+                  {project.backgroundImage && (
+                    <div className="w-full rounded-lg overflow-hidden border border-border/50 shadow-md">
+                      <img 
+                        src={project.backgroundImage} 
+                        alt={project.title}
+                        className="w-full h-auto object-cover"
+                      />
                     </div>
-                    <div className="flex-1">
-                      <CardTitle className={`text-xl mb-2 group-hover:text-primary transition-colors ${project.backgroundImage ? 'text-foreground drop-shadow-lg font-bold' : ''}`}>
-                        {project.title}
-                      </CardTitle>
-                      <p className={`text-sm mb-3 ${project.backgroundImage ? 'text-foreground/90 drop-shadow-md font-medium' : 'text-muted-foreground'}`}>
-                        {project.count}+ Technologies
-                      </p>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <Badge 
-                          key={techIndex} 
-                          variant="outline" 
-                          className={`hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs ${
-                            project.backgroundImage ? 'backdrop-blur-sm bg-background/90 border-2 font-medium' : ''
-                          }`}
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    
-                    <div className="flex gap-3 pt-2">
-                      <Button 
+                  )}
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge 
+                        key={techIndex} 
                         variant="outline" 
-                        size="sm" 
-                        className={`group hover:bg-primary hover:border-primary ${
-                          project.backgroundImage ? 'backdrop-blur-sm bg-background/90 border-2 font-semibold shadow-lg' : ''
-                        }`}
+                        className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs"
                       >
-                        <Github className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                        View Code
-                      </Button>
-                    </div>
+                        {tech}
+                      </Badge>
+                    ))}
                   </div>
-                </CardContent>
-              </div>
+                  
+                  <div className="flex gap-3 pt-2">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="group hover:bg-primary hover:border-primary"
+                    >
+                      <Github className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                      View Code
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
           ))}
         </div>
