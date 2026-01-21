@@ -49,12 +49,25 @@ const Navigation = () => {
   }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // If we're not on the main page, go there first, then scroll.
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      // Give the DOM time to render the target section after navigation
+      window.setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }, 50);
+      setIsOpen(false);
+      return;
     }
+
+    const element = document.getElementById(sectionId);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsOpen(false);
   };
 
