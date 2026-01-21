@@ -30,11 +30,11 @@ const Hero = () => {
           <div className="relative gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-fade-in-up overflow-hidden">
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 group-hover:opacity-95 transition-opacity duration-500"
               style={{ backgroundImage: 'url(/nyc-skyline-bg.jpg)' }}
             />
             {/* Light overlay to keep text readable while showing skyline */}
-            <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/35 to-background/40" />
+            <div className="absolute inset-0 bg-gradient-to-br from-background/22 via-background/18 to-background/22" />
             
             {/* Content */}
             <div className="relative z-10">
@@ -54,22 +54,22 @@ const Hero = () => {
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-glow">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
               SWATI
             </h1>
-            <p className="text-xl md:text-2xl text-primary mb-6">
+            <p className="text-xl md:text-2xl text-white/90 drop-shadow-lg mb-6">
               AI Software Engineer & Data Science Expert
             </p>
             
             {/* Location and Contact */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8 text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-accent" />
-                <span>New York, USA</span>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-white/85 drop-shadow-md">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/25 backdrop-blur-sm border border-white/10">
+                <MapPin className="w-4 h-4 text-white/90" />
+                <span className="font-medium">New York, USA</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>swati.swati@stonybrook.edu</span>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/25 backdrop-blur-sm border border-white/10">
+                <Mail className="w-4 h-4 text-white/90" />
+                <span className="font-medium">swati.swati@stonybrook.edu</span>
               </div>
             </div>
             
