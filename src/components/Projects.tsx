@@ -34,7 +34,8 @@ const Projects = () => {
       technologies: ["R", "Statistics", "Machine Learning", "EDA", "Data Visualization", "Random Forest", "SVM", "Decision Trees"],
       icon: <BarChart3 className="w-6 h-6" />,
       color: "secondary",
-      count: "8"
+      count: "8",
+      backgroundImage: "/nyccrime.jpeg"
     },
     {
       title: "Enterprise Fitness Center Database Management System",
