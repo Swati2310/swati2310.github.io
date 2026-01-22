@@ -20,7 +20,7 @@ const Education = () => {
       gpa: "8.97/10.00",
       type: "bachelor",
       current: false,
-      image: "/chitkara-university.jpg"
+      image: "/chitkara.jpg"
     }
   ];
 
