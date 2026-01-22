@@ -49,7 +49,7 @@ const Education = () => {
               {edu.image && (
                 <>
                   <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.78] group-hover:opacity-80 transition-opacity duration-500"
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.70] group-hover:opacity-75 transition-opacity duration-500"
                     style={{ backgroundImage: `url(${edu.image})` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/80 to-background/85" />
