@@ -46,6 +46,10 @@ const Hero = () => {
                     src="/profile.jpg" 
                     alt="Swati - AI Software Engineer" 
                     className="w-full h-full object-cover"
+                    style={{ 
+                      transform: 'scale(1.6)',
+                      objectPosition: 'center 30%'
+                    }}
                   />
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-2 border-background">
