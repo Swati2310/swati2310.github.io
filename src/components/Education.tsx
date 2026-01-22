@@ -52,7 +52,7 @@ const Education = () => {
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.78] group-hover:opacity-80 transition-opacity duration-500"
                     style={{ backgroundImage: `url(${edu.image})` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-background/78 via-background/72 to-background/78" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/80 to-background/85" />
                 </>
               )}
 
@@ -60,30 +60,30 @@ const Education = () => {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                   {/* Education Info */}
                   <div className="flex items-start gap-4 flex-1">
-                    <div className={`p-3 rounded-lg ${edu.type === 'master' ? 'bg-primary/25 text-white' : 'bg-accent/25 text-white'} group-hover:scale-110 transition-transform duration-300`}>
-                      <GraduationCap className="w-6 h-6 text-white" />
+                    <div className={`p-3 rounded-lg ${edu.type === 'master' ? 'bg-primary/30 text-white' : 'bg-accent/30 text-white'} group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm border border-white/20 shadow-lg`}>
+                      <GraduationCap className="w-6 h-6 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2 text-white drop-shadow-md group-hover:text-primary-foreground transition-colors">
+                      <h3 className="text-xl font-semibold mb-2 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] group-hover:text-primary-foreground transition-colors">
                         {edu.degree}
                       </h3>
-                      <p className="text-white/90 font-medium mb-4 drop-shadow-sm">
+                      <p className="text-white font-medium mb-4 drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
                         {edu.institution}
                       </p>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                        <div className="flex items-center gap-3 text-white/90 drop-shadow-sm">
-                          <Calendar className="w-4 h-4 text-primary/90" />
-                          <span className="text-sm">{edu.period}</span>
+                        <div className="flex items-center gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                          <Calendar className="w-4 h-4 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]" />
+                          <span className="text-sm font-medium">{edu.period}</span>
                         </div>
-                        <div className="flex items-center gap-3 text-white/90 drop-shadow-sm">
-                          <MapPin className="w-4 h-4 text-accent/90" />
-                          <span className="text-sm">{edu.location}</span>
+                        <div className="flex items-center gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                          <MapPin className="w-4 h-4 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]" />
+                          <span className="text-sm font-medium">{edu.location}</span>
                         </div>
                         {edu.gpa && (
-                          <div className="flex items-center gap-3 text-white/90 drop-shadow-sm">
-                            <Award className="w-4 h-4 text-primary/90" />
-                            <span className="text-sm">GPA: {edu.gpa}</span>
+                          <div className="flex items-center gap-3 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                            <Award className="w-4 h-4 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]" />
+                            <span className="text-sm font-medium">GPA: {edu.gpa}</span>
                           </div>
                         )}
                       </div>
