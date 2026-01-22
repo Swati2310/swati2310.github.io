@@ -43,7 +43,7 @@ const Hero = () => {
               <div className="relative">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 hover:scale-105">
                   <img 
-                    src="/ProfilePicture.png" 
+                    src="/profile.jpg" 
                     alt="Swati - AI Software Engineer" 
                     className="w-full h-full object-cover"
                   />
