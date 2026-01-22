@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const Gallery = () => {
-  // Generate all image paths - 25 pics + profile
+  // Generate all image paths - 25 pics
   const galleryFiles = [
     "/gallery/pic1.jpg",
     "/gallery/pic2.jpg",
@@ -27,8 +27,7 @@ const Gallery = () => {
     "/gallery/pic22.jpg",
     "/gallery/pic23.jpg",
     "/gallery/pic24.jpg",
-    "/gallery/pic25.jpg",
-    "/gallery/profile.jpg"
+    "/gallery/pic25.jpg"
   ];
 
   const [loadedCount, setLoadedCount] = useState(0);
