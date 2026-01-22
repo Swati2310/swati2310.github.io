@@ -49,7 +49,7 @@ const Education = () => {
               {edu.image && (
                 <>
                   <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.78] group-hover:opacity-80 transition-opacity duration-500"
                     style={{ backgroundImage: `url(${edu.image})` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-background/78 via-background/72 to-background/78" />
@@ -90,23 +90,12 @@ const Education = () => {
                     </div>
                   </div>
                   
-                  {/* Image + Status Badge */}
-                  {(edu.image || edu.current) && (
-                    <div className="flex-shrink-0 flex flex-col items-end gap-3">
-                      {edu.image && (
-                        <div className="w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 rounded-xl overflow-hidden border border-border/60 shadow-md">
-                          <img
-                            src={edu.image}
-                            alt={edu.institution}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      )}
-                      {edu.current && (
-                        <div className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full">
-                          Current
-                        </div>
-                      )}
+                  {/* Status Badge */}
+                  {edu.current && (
+                    <div className="flex-shrink-0">
+                      <div className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full backdrop-blur-sm bg-background/80 border border-border/50 shadow-sm">
+                        Current
+                      </div>
                     </div>
                   )}
                 </div>
