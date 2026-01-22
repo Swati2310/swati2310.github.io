@@ -33,23 +33,27 @@ const Gallery = () => {
 
   const [loadedCount, setLoadedCount] = useState(0);
   const [errorCount, setErrorCount] = useState(0);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     console.log(`Gallery: Total images: ${galleryFiles.length}`);
+    console.log(`Gallery: Image list:`, galleryFiles);
   }, []);
 
-  const handleImageLoad = () => {
+  const handleImageLoad = (src: string) => {
     setLoadedCount(prev => {
       const newCount = prev + 1;
-      console.log(`Gallery: Loaded ${newCount}/${galleryFiles.length} images`);
+      console.log(`Gallery: Loaded ${newCount}/${galleryFiles.length} images - ${src}`);
       return newCount;
     });
   };
 
   const handleImageError = (src: string) => {
+    setFailedImages(prev => new Set([...prev, src]));
     setErrorCount(prev => {
       const newCount = prev + 1;
       console.error(`Gallery: Failed to load image ${newCount}: ${src}`);
+      console.warn(`Note: If ${src} is a HEIF/HEIC file, it needs to be converted to JPEG for browser compatibility.`);
       return newCount;
     });
   };
@@ -83,20 +87,28 @@ const Gallery = () => {
                 style={{ animationDelay: `${index * 0.03}s` }}
               >
                 <div className="relative overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-muted/20 aspect-square">
-                  <img
-                    src={imagePath}
-                    alt={`Gallery image ${index + 1}`}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                    loading={index < 10 ? "eager" : "lazy"}
-                    onLoad={handleImageLoad}
-                    onError={(e) => {
-                      handleImageError(imagePath);
-                      console.error(`Image failed to load: ${imagePath}`, e);
-                      // Log the actual error details
-                      const target = e.target as HTMLImageElement;
-                      console.error(`Failed image src: ${target.src}, naturalWidth: ${target.naturalWidth}, naturalHeight: ${target.naturalHeight}`);
-                    }}
-                  />
+                  {failedImages.has(imagePath) ? (
+                    <div className="w-full h-full flex items-center justify-center bg-muted/40">
+                      <div className="text-center p-4">
+                        <p className="text-xs text-muted-foreground">Image unavailable</p>
+                        <p className="text-xs text-muted-foreground mt-1">({imagePath.split('/').pop()})</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={imagePath}
+                      alt={`Gallery image ${index + 1}`}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      loading={index < 10 ? "eager" : "lazy"}
+                      onLoad={() => handleImageLoad(imagePath)}
+                      onError={(e) => {
+                        handleImageError(imagePath);
+                        console.error(`Image failed to load: ${imagePath}`, e);
+                        const target = e.target as HTMLImageElement;
+                        console.error(`Failed image src: ${target.src}, naturalWidth: ${target.naturalWidth}, naturalHeight: ${target.naturalHeight}`);
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             );
