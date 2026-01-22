@@ -68,10 +68,7 @@ const Gallery = () => {
           <p className="text-lg md:text-xl text-muted-foreground">
             Moments captured through photos from my past experiences and adventures.
           </p>
-          {/* Debug info - remove in production if needed */}
-          <p className="text-sm text-muted-foreground mt-2">
-            Showing {galleryFiles.length} images ({loadedCount} loaded, {errorCount} errors)
-          </p>
+
         </div>
 
         {/* Full-Width Photo Grid - Show all images */}
