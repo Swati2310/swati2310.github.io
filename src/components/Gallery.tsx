@@ -105,7 +105,7 @@ const Gallery = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight max-w-4xl mx-auto">
-            Welcome! Discover moments through my lens, where each photo tells a story.
+            Some colours and faces through my lens.
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
