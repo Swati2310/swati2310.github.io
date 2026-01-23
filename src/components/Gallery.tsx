@@ -143,12 +143,16 @@ const Gallery = () => {
             {galleryFiles.slice(15, 18).map((src, idx) => renderImage(src, idx + 15))}
           </div>
           
-          {/* Remaining images in 3-column grids: pic21-25 */}
-          {galleryFiles.slice(20, 25).length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {galleryFiles.slice(20, 25).map((src, idx) => renderImage(src, idx + 20))}
-            </div>
-          )}
+          {/* Full-width image: pic21 */}
+          {renderImage(galleryFiles[20], 20, true)}
+          
+          {/* 3-column grid: pic22, pic23, pic24 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {galleryFiles.slice(21, 24).map((src, idx) => renderImage(src, idx + 21))}
+          </div>
+          
+          {/* Full-width image: pic25 */}
+          {renderImage(galleryFiles[24], 24, true)}
         </div>
       </div>
     </section>
