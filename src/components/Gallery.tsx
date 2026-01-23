@@ -62,12 +62,9 @@ const Gallery = () => {
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-primary">
-            FROM MY EYES
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Welcome! Discover moments through my lens, where each photo tells a story.
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            Moments captured through photos from my past experiences and adventures.
-          </p>
         </div>
 
         {/* 3-Column Grid Layout */}
@@ -78,12 +75,12 @@ const Gallery = () => {
             return (
               <div
                 key={`gallery-img-${index}-${imagePath}`}
-                className="group animate-fade-in-up overflow-hidden"
+                className="group animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-muted/20 aspect-[4/3]">
+                <div className="relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-muted/20">
                   {failedImages.has(imagePath) ? (
-                    <div className="w-full h-full flex items-center justify-center bg-muted/40">
+                    <div className="w-full aspect-[4/3] flex items-center justify-center bg-muted/40">
                       <div className="text-center p-4">
                         <p className="text-xs text-muted-foreground">Image unavailable</p>
                         <p className="text-xs text-muted-foreground mt-1">({imagePath.split('/').pop()})</p>
@@ -93,7 +90,7 @@ const Gallery = () => {
                     <img
                       src={imagePath}
                       alt={`Gallery image ${index + 1}`}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500"
                       loading={index < 9 ? "eager" : "lazy"}
                       onLoad={() => handleImageLoad(imagePath)}
                       onError={(e) => {
