@@ -58,17 +58,18 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-12 px-4 sm:px-6 bg-secondary/5 min-h-screen">
-      <div className="container mx-auto max-w-6xl">
+    <section id="gallery" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-secondary/5 to-background min-h-screen">
+      <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight max-w-4xl mx-auto">
             Welcome! Discover moments through my lens, where each photo tells a story.
           </h2>
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
-        {/* 3-Column Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {/* 3-Column Grid Layout with Masonry-like effect */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {galleryFiles.map((src, index) => {
             // Ensure the path is correct - remove any leading issues
             const imagePath = src.startsWith('/') ? src : `/${src}`;
@@ -76,30 +77,34 @@ const Gallery = () => {
               <div
                 key={`gallery-img-${index}-${imagePath}`}
                 className="group animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.05}s` }}
+                style={{ animationDelay: `${index * 0.03}s` }}
               >
-                <div className="relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-muted/20">
+                <div className="relative overflow-hidden rounded-lg bg-card border border-border/50 shadow-lg hover:shadow-2xl hover:border-primary/50 transition-all duration-500 group-hover:-translate-y-1">
                   {failedImages.has(imagePath) ? (
-                    <div className="w-full aspect-[4/3] flex items-center justify-center bg-muted/40">
+                    <div className="w-full aspect-[4/3] flex items-center justify-center bg-muted/40 rounded-lg">
                       <div className="text-center p-4">
-                        <p className="text-xs text-muted-foreground">Image unavailable</p>
-                        <p className="text-xs text-muted-foreground mt-1">({imagePath.split('/').pop()})</p>
+                        <p className="text-sm text-muted-foreground font-medium">Image unavailable</p>
+                        <p className="text-xs text-muted-foreground mt-1 opacity-70">({imagePath.split('/').pop()})</p>
                       </div>
                     </div>
                   ) : (
-                    <img
-                      src={imagePath}
-                      alt={`Gallery image ${index + 1}`}
-                      className="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500"
-                      loading={index < 9 ? "eager" : "lazy"}
-                      onLoad={() => handleImageLoad(imagePath)}
-                      onError={(e) => {
-                        handleImageError(imagePath);
-                        console.error(`Image failed to load: ${imagePath}`, e);
-                        const target = e.target as HTMLImageElement;
-                        console.error(`Failed image src: ${target.src}, naturalWidth: ${target.naturalWidth}, naturalHeight: ${target.naturalHeight}`);
-                      }}
-                    />
+                    <div className="relative w-full overflow-hidden rounded-lg">
+                      <img
+                        src={imagePath}
+                        alt={`Gallery image ${index + 1}`}
+                        className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                        loading={index < 9 ? "eager" : "lazy"}
+                        onLoad={() => handleImageLoad(imagePath)}
+                        onError={(e) => {
+                          handleImageError(imagePath);
+                          console.error(`Image failed to load: ${imagePath}`, e);
+                          const target = e.target as HTMLImageElement;
+                          console.error(`Failed image src: ${target.src}, naturalWidth: ${target.naturalWidth}, naturalHeight: ${target.naturalHeight}`);
+                        }}
+                      />
+                      {/* Overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
                   )}
                 </div>
               </div>
