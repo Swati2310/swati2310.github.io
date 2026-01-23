@@ -59,7 +59,7 @@ const Gallery = () => {
 
   return (
     <section id="gallery" className="py-12 px-4 sm:px-6 bg-secondary/5 min-h-screen">
-      <div className="w-full">
+      <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-5xl md:text-6xl font-bold mb-4 text-primary">
@@ -68,11 +68,10 @@ const Gallery = () => {
           <p className="text-lg md:text-xl text-muted-foreground">
             Moments captured through photos from my past experiences and adventures.
           </p>
-
         </div>
 
-        {/* Full-Width Photo Grid - Show all images */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
+        {/* 3-Column Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {galleryFiles.map((src, index) => {
             // Ensure the path is correct - remove any leading issues
             const imagePath = src.startsWith('/') ? src : `/${src}`;
@@ -80,9 +79,9 @@ const Gallery = () => {
               <div
                 key={`gallery-img-${index}-${imagePath}`}
                 className="group animate-fade-in-up overflow-hidden"
-                style={{ animationDelay: `${index * 0.03}s` }}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="relative overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-muted/20 aspect-square">
+                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-muted/20 aspect-[4/3]">
                   {failedImages.has(imagePath) ? (
                     <div className="w-full h-full flex items-center justify-center bg-muted/40">
                       <div className="text-center p-4">
@@ -94,8 +93,8 @@ const Gallery = () => {
                     <img
                       src={imagePath}
                       alt={`Gallery image ${index + 1}`}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                      loading={index < 10 ? "eager" : "lazy"}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      loading={index < 9 ? "eager" : "lazy"}
                       onLoad={() => handleImageLoad(imagePath)}
                       onError={(e) => {
                         handleImageError(imagePath);
