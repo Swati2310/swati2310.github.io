@@ -73,7 +73,7 @@ const Experience = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl font-bold mb-4 text-primary">Experience</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey through various roles in AI/ML, software development, and technical leadership positions
+            My professional journey so far
           </p>
         </div>
         
