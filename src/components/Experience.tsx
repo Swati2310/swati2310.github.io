@@ -4,12 +4,26 @@ import { Calendar, MapPin, Building, Code } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "Residential Safety Program (RSP) - Early Shift Worker",
+      company: "Stony Brook University",
+      location: "Stony Brook, United States",
+      period: "November 2025 – Present",
+      type: "Part-time",
+      current: true,
+      achievements: [
+        "Served as a front-facing campus representative, providing walk-escort services, answering office phone calls, and delivering clear, professional communication to students, staff, and campus partners",
+        "Coordinated dispatch and operational support, relaying time-sensitive information to security officers and emergency personnel, maintaining incident documentation, and supporting daily administrative workflows",
+        "Ensured facility safety and compliance through routine inspections of residential halls, access points, and safety equipment, while submitting maintenance work orders and collaborating with multiple university departments"
+      ],
+      skills: ["Communication", "Administrative Support", "Safety Compliance", "Documentation", "Customer Service", "Emergency Response", "Campus Operations"]
+    },
+    {
       title: "AI Software Engineer Intern",
       company: "Volithost LLC",
       location: "Florida, United States",
       period: "May 2025 – August 2025",
       type: "Internship",
-      current: true,
+      current: false,
       achievements: [
         "Built XGBoost regression models for demand forecasting achieving 85% R² accuracy and 7.2 MAE while handling 121-day dataset with 66.9% missing data through advanced interpolation strategies",
         "Engineered comprehensive feature pipeline creating 15+ features including time-series lags (3, 5, 7 days), rolling statistics, weather correlations, and temporal indicators for ML model training",
