@@ -57,59 +57,100 @@ const Gallery = () => {
     });
   };
 
+  // Organize images according to the reference layout pattern
+  // Pattern: Large image -> 3x3 grid -> Large image -> 3x3 grid
+  const featuredImages = ["/gallery/pic1.jpg", "/gallery/pic9.jpg"];
+  const grid1Images = [
+    "/gallery/pic2.jpg", "/gallery/pic3.jpg", "/gallery/pic4.jpg",
+    "/gallery/pic5.jpg", "/gallery/pic6.jpg", "/gallery/pic7.jpg",
+    "/gallery/pic8.jpg", "/gallery/pic19.jpg", "/gallery/pic10.jpg"
+  ];
+  const grid2Images = [
+    "/gallery/pic20.jpg", "/gallery/pic11.jpg", "/gallery/pic12.jpg",
+    "/gallery/pic13.jpg", "/gallery/pic14.jpg", "/gallery/pic15.jpg",
+    "/gallery/pic16.jpg", "/gallery/pic17.jpg", "/gallery/pic18.jpg"
+  ];
+  const remainingImages = [
+    "/gallery/pic21.jpg", "/gallery/pic22.jpg", "/gallery/pic23.jpg",
+    "/gallery/pic24.jpg", "/gallery/pic25.jpg"
+  ];
+
+  const renderImage = (imagePath: string, index: number, isLarge: boolean = false) => {
+    const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+    return (
+      <div
+        key={`gallery-img-${index}-${path}`}
+        className={`group animate-fade-in-up ${isLarge ? 'mb-8' : ''}`}
+        style={{ animationDelay: `${index * 0.03}s` }}
+      >
+        <div className={`relative overflow-hidden bg-card border border-border/50 shadow-lg hover:shadow-2xl hover:border-primary/50 transition-all duration-500 group-hover:-translate-y-1 ${isLarge ? 'rounded-xl' : 'rounded-lg'}`}>
+          {failedImages.has(path) ? (
+            <div className={`w-full ${isLarge ? 'aspect-[16/9]' : 'aspect-[4/3]'} flex items-center justify-center bg-muted/40 ${isLarge ? 'rounded-xl' : 'rounded-lg'}`}>
+              <div className="text-center p-4">
+                <p className="text-sm text-muted-foreground font-medium">Image unavailable</p>
+                <p className="text-xs text-muted-foreground mt-1 opacity-70">({path.split('/').pop()})</p>
+              </div>
+            </div>
+          ) : (
+            <div className={`relative w-full overflow-hidden ${isLarge ? 'rounded-xl' : 'rounded-lg'}`}>
+              <img
+                src={path}
+                alt={`Gallery image ${index + 1}`}
+                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading={index < 9 ? "eager" : "lazy"}
+                onLoad={() => handleImageLoad(path)}
+                onError={(e) => {
+                  handleImageError(path);
+                  console.error(`Image failed to load: ${path}`, e);
+                  const target = e.target as HTMLImageElement;
+                  console.error(`Failed image src: ${target.src}, naturalWidth: ${target.naturalWidth}, naturalHeight: ${target.naturalHeight}`);
+                }}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section id="gallery" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-secondary/5 to-background min-h-screen">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight max-w-4xl mx-auto">
-            Welcome! Discover moments through my lens, where each photo tells a story.
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-foreground">
+            A GLIMPSE <br />
+            FROM MY EYES
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground mt-4">
+            Moments captured through photos from my past experiences and adventures
+          </p>
         </div>
 
-        {/* 3-Column Grid Layout with Masonry-like effect */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {galleryFiles.map((src, index) => {
-            // Ensure the path is correct - remove any leading issues
-            const imagePath = src.startsWith('/') ? src : `/${src}`;
-            return (
-              <div
-                key={`gallery-img-${index}-${imagePath}`}
-                className="group animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.03}s` }}
-              >
-                <div className="relative overflow-hidden rounded-lg bg-card border border-border/50 shadow-lg hover:shadow-2xl hover:border-primary/50 transition-all duration-500 group-hover:-translate-y-1">
-                  {failedImages.has(imagePath) ? (
-                    <div className="w-full aspect-[4/3] flex items-center justify-center bg-muted/40 rounded-lg">
-                      <div className="text-center p-4">
-                        <p className="text-sm text-muted-foreground font-medium">Image unavailable</p>
-                        <p className="text-xs text-muted-foreground mt-1 opacity-70">({imagePath.split('/').pop()})</p>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="relative w-full overflow-hidden rounded-lg">
-                      <img
-                        src={imagePath}
-                        alt={`Gallery image ${index + 1}`}
-                        className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                        loading={index < 9 ? "eager" : "lazy"}
-                        onLoad={() => handleImageLoad(imagePath)}
-                        onError={(e) => {
-                          handleImageError(imagePath);
-                          console.error(`Image failed to load: ${imagePath}`, e);
-                          const target = e.target as HTMLImageElement;
-                          console.error(`Failed image src: ${target.src}, naturalWidth: ${target.naturalWidth}, naturalHeight: ${target.naturalHeight}`);
-                        }}
-                      />
-                      {/* Overlay on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+        {/* Gallery Layout: Large image -> 3x3 grid -> Large image -> 3x3 grid -> remaining */}
+        <div className="space-y-8">
+          {/* First Featured Image */}
+          {renderImage(featuredImages[0], 0, true)}
+
+          {/* First 3x3 Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {grid1Images.map((src, index) => renderImage(src, index + 1))}
+          </div>
+
+          {/* Second Featured Image */}
+          {renderImage(featuredImages[1], 10, true)}
+
+          {/* Second 3x3 Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {grid2Images.map((src, index) => renderImage(src, index + 11))}
+          </div>
+
+          {/* Remaining Images in Grid */}
+          {remainingImages.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {remainingImages.map((src, index) => renderImage(src, index + 20))}
+            </div>
+          )}
         </div>
       </div>
     </section>
