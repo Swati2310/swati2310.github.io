@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const Gallery = () => {
-  // Generate all image paths - 25 pics
+  // Generate all image paths - includes pic26, pic27, pic28, pic29, pic30
   const galleryFiles = [
     "/gallery/pic1.jpg",
     "/gallery/pic2.jpg",
@@ -27,7 +27,12 @@ const Gallery = () => {
     "/gallery/pic22.jpg",
     "/gallery/pic23.jpg",
     "/gallery/pic24.jpg",
-    "/gallery/pic25.jpg"
+    "/gallery/pic25.jpg",
+    "/gallery/pic26.jpg",
+    "/gallery/pic27.jpg",
+    "/gallery/pic28.jpg",
+    "/gallery/pic29.jpg",
+    "/gallery/pic30.jpg"
   ];
 
   const [loadedCount, setLoadedCount] = useState(0);
@@ -146,10 +151,18 @@ const Gallery = () => {
           {/* Full-width image: pic21 */}
           {renderImage(galleryFiles[20], 20, true)}
           
-          {/* 3-column grid: pic22, pic23, pic24 */}
+          {/* 3-column grid: pic27, pic23, pic24 (replacing pic22 with pic27) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {galleryFiles.slice(21, 24).map((src, idx) => renderImage(src, idx + 21))}
+            {[galleryFiles[26], galleryFiles[22], galleryFiles[23]].map((src, idx) => renderImage(src, idx + 21))}
           </div>
+          
+          {/* 3-column grid: pic28, pic29, pic30 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {galleryFiles.slice(27, 30).map((src, idx) => renderImage(src, idx + 27))}
+          </div>
+          
+          {/* Full-width image: pic26 (like pic9) */}
+          {renderImage(galleryFiles[25], 25, true)}
           
           {/* Full-width image: pic25 */}
           {renderImage(galleryFiles[24], 24, true)}
