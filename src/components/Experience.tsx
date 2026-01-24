@@ -106,10 +106,10 @@ const Experience = () => {
                   {exp.image && (
                     <>
                       <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 group-hover:opacity-25 transition-opacity duration-500"
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 group-hover:opacity-50 transition-opacity duration-500"
                         style={{ backgroundImage: `url(${exp.image})` }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/85" />
                     </>
                   )}
                   
