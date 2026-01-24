@@ -34,6 +34,7 @@ const Experience = () => {
       period: "August 2021 – July 2024",
       type: "Full-time",
       current: false,
+      image: "/infosys.jpg",
       achievements: [
         "Installed Finacle Core Banking on OpenShift and AWS clusters, establishing and managing environments for 20+ applications, with 5 installations annually to address new functional business requirements and updates",
         "Built and deployed JFrog and ECR images in Kubernetes namespaces and AWS, automating patch deployments and managing deliverables, resulting in a 85% reduction in deployment time and an 80% increase in deployment accuracy",
