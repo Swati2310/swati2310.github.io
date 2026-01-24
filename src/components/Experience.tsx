@@ -102,7 +102,7 @@ const Experience = () => {
 
                 {/* Content Card */}
                 <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group">
-                  <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex flex-col md:flex-row md:items-start gap-6">
                     <div className="flex-1">
                       {/* Date and Title */}
                       <div className="flex items-start justify-between mb-4">
