@@ -10,10 +10,9 @@ const Experience = () => {
       period: "November 2025 – Present",
       type: "Part-time",
       current: true,
+      image: "/campus_rsp.jpg",
       achievements: [
-        "Served as a front-facing campus representative, providing walk-escort services, answering office phone calls, and delivering clear, professional communication to students, staff, and campus partners",
-        "Coordinated dispatch and operational support, relaying time-sensitive information to security officers and emergency personnel, maintaining incident documentation, and supporting daily administrative workflows",
-        "Ensured facility safety and compliance through routine inspections of residential halls, access points, and safety equipment, while submitting maintenance work orders and collaborating with multiple university departments"
+        "Served as a front-facing campus representative providing walk-escort services, coordinating dispatch operations, and maintaining incident documentation while ensuring facility safety compliance through routine inspections of residential halls and safety equipment"
       ],
       skills: ["Communication", "Administrative Support", "Safety Compliance", "Documentation", "Customer Service", "Emergency Response", "Campus Operations"]
     },
@@ -102,53 +101,66 @@ const Experience = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group">
-                  {/* Date and Title */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <div className="text-muted-foreground text-sm mb-2 font-medium flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-primary" />
-                        <span>{exp.period}</span>
-                        {exp.current && (
-                          <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full ml-2">
-                            Current
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-primary transition-colors">
-                        {exp.title}
-                      </h3>
-                      <p className="text-foreground font-semibold mb-1">{exp.company}</p>
-                      <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
-                        <MapPin className="w-4 h-4 text-accent" />
-                        <span>{exp.location}</span>
-                        <span className="mx-2">•</span>
-                        <span>{exp.type}</span>
+                <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group relative overflow-hidden">
+                  {/* Background Image if available */}
+                  {exp.image && (
+                    <>
+                      <div
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 group-hover:opacity-25 transition-opacity duration-500"
+                        style={{ backgroundImage: `url(${exp.image})` }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
+                    </>
+                  )}
+                  
+                  <div className="relative z-10">
+                    {/* Date and Title */}
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="text-muted-foreground text-sm mb-2 font-medium flex items-center gap-2">
+                          <Calendar className="w-4 h-4 text-primary" />
+                          <span>{exp.period}</span>
+                          {exp.current && (
+                            <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full ml-2">
+                              Current
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-primary transition-colors">
+                          {exp.title}
+                        </h3>
+                        <p className="text-foreground font-semibold mb-1">{exp.company}</p>
+                        <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
+                          <MapPin className="w-4 h-4 text-accent" />
+                          <span>{exp.location}</span>
+                          <span className="mx-2">•</span>
+                          <span>{exp.type}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  {/* Achievements */}
-                  <div className="space-y-3 mb-6">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <div key={achIndex} className="flex gap-3">
-                        <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                        <p className="text-muted-foreground leading-relaxed text-sm">{achievement}</p>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Skills */}
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
-                    {exp.skills.map((skill, skillIndex) => (
-                      <Badge 
-                        key={skillIndex} 
-                        variant="secondary"
-                        className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
+                    
+                    {/* Achievements */}
+                    <div className="space-y-3 mb-6">
+                      {exp.achievements.map((achievement, achIndex) => (
+                        <div key={achIndex} className="flex gap-3">
+                          <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                          <p className="text-muted-foreground leading-relaxed text-sm">{achievement}</p>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Skills */}
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+                      {exp.skills.map((skill, skillIndex) => (
+                        <Badge 
+                          key={skillIndex} 
+                          variant="secondary"
+                          className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs"
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
