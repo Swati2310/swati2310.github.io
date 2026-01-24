@@ -35,13 +35,7 @@ const Experience = () => {
       type: "Full-time",
       current: false,
       image: "/infosys.jpg",
-      achievements: [
-        "Installed Finacle Core Banking on OpenShift and AWS clusters, establishing and managing environments for 20+ applications, with 5 installations annually to address new functional business requirements and updates",
-        "Built and deployed JFrog and ECR images in Kubernetes namespaces and AWS, automating patch deployments and managing deliverables, resulting in a 85% reduction in deployment time and an 80% increase in deployment accuracy",
-        "Deployed and managed Dockerized applications on AWS EKS, using Kubernetes, Docker, Ansible, and GitLab to create 15+ CI/CD pipelines, achieving a 40% reduction in infrastructure costs through optimized resource allocation and scalability",
-        "Led a DevOps team of 3 in managing end-to-end development and operations for projects in SEPA and APAC region, overseeing CI/CD, E2E, and production environments for 50+ integrations, driving efficiency for client (BOFFA)",
-        "Hosted and managed Escrow deposit deployments for Finacle applications across 3+ versions with NCC Group in the UK region for Bank of America as a third-party client"
-      ],
+      achievements: "Installed and managed Finacle Core Banking on OpenShift and AWS clusters for 20+ applications with 5 annual installations. Built and deployed JFrog and ECR images in Kubernetes, automating patch deployments to achieve 85% reduction in deployment time and 80% increase in accuracy. Deployed Dockerized applications on AWS EKS using Kubernetes, Docker, Ansible, and GitLab, creating 15+ CI/CD pipelines and achieving 40% reduction in infrastructure costs. Led DevOps team of 3 managing end-to-end operations for SEPA and APAC projects, overseeing 50+ integrations for BOFFA client. Managed Escrow deposit deployments for Finacle applications across 3+ versions with NCC Group for Bank of America.",
       skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
     },
     {
