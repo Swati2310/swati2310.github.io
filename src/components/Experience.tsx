@@ -57,8 +57,8 @@ const Experience = () => {
       type: "Internship",
       current: false,
       image: "/mysore.jpg",
-      achievements: "Completed comprehensive internship training program at Infosys, gaining hands-on experience in software development and enterprise technologies. Worked on real-world projects involving database management, backend development, and system integration. Participated in training modules covering software engineering best practices, development methodologies, and industry-standard tools and frameworks.",
-      skills: ["Software Development", "Database Management", "Backend Development", "System Integration", "Training & Development"]
+      achievements: "Developed and deployed a Railway Transportation Ticket Management System using Java, Spring Boot, and Angular 4, ensuring system reliability and scalability for customer operations. Designed and implemented RESTful APIs for seamless frontend-backend integration and optimized SQL queries for efficient database operations. Collaborated with cross-functional teams to resolve industry-based customer complaint queries, applying data structures and Python for data analysis and problem-solving. Completed comprehensive training in enterprise software development, full-stack technologies, and agile methodologies.",
+      skills: ["Java", "Spring Boot", "REST APIs", "Angular 4", "SQL", "Python", "Data Structures", "Full-Stack Development", "System Design", "Agile Methodologies"]
     }
   ];
 
