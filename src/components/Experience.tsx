@@ -4,19 +4,6 @@ import { Calendar, MapPin, Building, Code } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Residential Safety Program (RSP) - Early Shift Student Assistant",
-      company: "Stony Brook University",
-      location: "Stony Brook, United States",
-      period: "November 2025 – Present",
-      type: "Part-time",
-      current: true,
-      image: "/campus_rsp.jpg",
-      achievements: [
-        "Served as a front-facing campus representative providing walk-escort services, coordinating dispatch operations, and maintaining incident documentation while ensuring facility safety compliance through routine inspections of residential halls and safety equipment"
-      ],
-      skills: ["Communication", "Administrative Support", "Safety Compliance", "Documentation", "Customer Service", "Emergency Response", "Campus Operations"]
-    },
-    {
       title: "AI Software Engineer Intern",
       company: "Volithost LLC",
       location: "Florida, United States",
@@ -129,7 +116,7 @@ const Experience = () => {
                     {typeof exp.achievements === 'string' ? (
                       <p className="text-muted-foreground leading-relaxed text-sm">{exp.achievements}</p>
                     ) : (
-                      exp.achievements.map((achievement, achIndex) => (
+                      (exp.achievements as string[]).map((achievement, achIndex) => (
                         <div key={achIndex} className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                           <p className="text-muted-foreground leading-relaxed text-sm">{achievement}</p>
