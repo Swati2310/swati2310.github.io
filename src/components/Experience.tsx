@@ -45,6 +45,7 @@ const Experience = () => {
       period: "August 2019 – July 2021",
       type: "Full-time",
       current: false,
+      image: "/InfosysPune.jpg",
       achievements: [
         "Maintained OLAP data and production environment reliability for Finacle e-banking by replicating and creating 50+ databases across multiple accounts to support application structure changes in the APAC region",
         "Managed and optimized 10+ cloud servers by configuring crontab jobs, archiving logs, ensuring efficient disk management, and using Jenkins CI/CD pipelines for source code deployment, backups, and memory alerts",
