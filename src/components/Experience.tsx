@@ -24,12 +24,7 @@ const Experience = () => {
       type: "Internship",
       current: false,
       image: "/Voltihost_Image.png",
-      achievements: [
-        "Developed XGBoost demand forecasting models achieving 85% R² accuracy and 7.2 MAE on 121-day dataset with 66.9% missing data using advanced interpolation",
-        "Built feature engineering pipeline with 15+ time-series features including lags, rolling statistics, and weather correlations for ML training",
-        "Deployed production ML infrastructure with ONNX export and live FastAPI forecasting service supporting 1-30 day prediction horizons",
-        "Optimized model performance via hyperparameter tuning and cross-validation, improving from Prophet R² = -229 to XGBoost R² = 0.85"
-      ],
+      achievements: "Developed XGBoost demand forecasting models achieving 85% R² accuracy and 7.2 MAE on 121-day dataset with 66.9% missing data. Engineered feature pipeline with 15+ time-series features (lags, rolling statistics, weather correlations) and deployed production ML infrastructure with ONNX export and FastAPI forecasting service supporting 1-30 day horizons. Optimized performance through hyperparameter tuning, improving from Prophet R² = -229 to XGBoost R² = 0.85.",
       skills: ["Python", "XGBoost", "Scikit-learn", "Pandas", "NumPy", "ONNX", "FastAPI", "Time Series", "Feature Engineering", "Model Deployment"]
     },
     {
@@ -129,12 +124,16 @@ const Experience = () => {
                   
                   {/* Achievements */}
                   <div className="space-y-3 mb-6">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <div key={achIndex} className="flex gap-3">
-                        <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                        <p className="text-muted-foreground leading-relaxed text-sm">{achievement}</p>
-                      </div>
-                    ))}
+                    {typeof exp.achievements === 'string' ? (
+                      <p className="text-muted-foreground leading-relaxed text-sm">{exp.achievements}</p>
+                    ) : (
+                      exp.achievements.map((achievement, achIndex) => (
+                        <div key={achIndex} className="flex gap-3">
+                          <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                          <p className="text-muted-foreground leading-relaxed text-sm">{achievement}</p>
+                        </div>
+                      ))
+                    )}
                   </div>
 
                   {/* Experience Image (optional) - between achievements and skills */}
