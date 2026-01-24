@@ -34,7 +34,7 @@ const Experience = () => {
       period: "August 2021 – July 2024",
       type: "Full-time",
       current: false,
-      image: "/infosys.jpg",
+      images: ["/infosys.jpg", "/BOFA.webp"],
       achievements: "Installed and managed Finacle Core Banking on OpenShift and AWS clusters for 20+ applications with 5 annual installations. Built and deployed JFrog and ECR images in Kubernetes, automating patch deployments to achieve 85% reduction in deployment time and 80% increase in accuracy. Deployed Dockerized applications on AWS EKS using Kubernetes, Docker, Ansible, and GitLab, creating 15+ CI/CD pipelines and achieving 40% reduction in infrastructure costs. Led DevOps team of 3 managing end-to-end operations for SEPA and APAC projects, overseeing 50+ integrations for BOFFA client. Managed Escrow deposit deployments for Finacle applications across 3+ versions with NCC Group for Bank of America.",
       skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
     },
@@ -131,8 +131,22 @@ const Experience = () => {
                     )}
                   </div>
 
-                  {/* Experience Image (optional) - between achievements and skills */}
-                  {exp.image && (
+                  {/* Experience Image(s) (optional) - between achievements and skills */}
+                  {exp.images && Array.isArray(exp.images) && exp.images.length > 0 && (
+                    <div className="w-[calc(100%+3rem)] -mx-6 mb-6 grid grid-cols-2 gap-2">
+                      {exp.images.map((img, imgIndex) => (
+                        <div key={imgIndex} className="overflow-hidden border-x-0 border-y border-border/60 bg-card h-64">
+                          <img
+                            src={img}
+                            alt={`${exp.title} - Image ${imgIndex + 1}`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {exp.image && !exp.images && (
                     <div className="w-[calc(100%+3rem)] -mx-6 overflow-hidden border-x-0 border-y border-border/60 bg-card mb-6 h-64">
                       <img
                         src={exp.image}
