@@ -46,13 +46,19 @@ const Experience = () => {
       type: "Full-time",
       current: false,
       image: "/InfosysPune.jpg",
-      achievements: [
-        "Maintained OLAP data and production environment reliability for Finacle e-banking by replicating and creating 50+ databases across multiple accounts to support application structure changes in the APAC region",
-        "Managed and optimized 10+ cloud servers by configuring crontab jobs, archiving logs, ensuring efficient disk management, and using Jenkins CI/CD pipelines for source code deployment, backups, and memory alerts",
-        "Generated 20+ detailed reports with RReport, optimizing backend processes through complex SQL and PL/SQL queries",
-        "Enhanced Finacle's functionality for an investment banking firm by customizing 100+ web pages and menus using JavaScript and JSPs"
-      ],
+      achievements: "Maintained OLAP data and production environment reliability for Finacle e-banking by replicating and creating 50+ databases across multiple accounts to support application structure changes in the APAC region. Managed and optimized 10+ cloud servers using Jenkins CI/CD pipelines for source code deployment, backups, and memory alerts. Generated 20+ detailed reports with RReport, optimizing backend processes through complex SQL and PL/SQL queries. Enhanced Finacle's functionality for an investment banking firm by customizing 100+ web pages and menus using JavaScript and JSPs.",
       skills: ["SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle", "RReport", "JSP"]
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "Infosys Ltd.",
+      location: "Mysore, Karnataka, India",
+      period: "January 2019 – July 2019",
+      type: "Internship",
+      current: false,
+      image: "/mysore.jpg",
+      achievements: "Completed comprehensive internship training program at Infosys, gaining hands-on experience in software development and enterprise technologies. Worked on real-world projects involving database management, backend development, and system integration. Participated in training modules covering software engineering best practices, development methodologies, and industry-standard tools and frameworks.",
+      skills: ["Software Development", "Database Management", "Backend Development", "System Integration", "Training & Development"]
     }
   ];
 
