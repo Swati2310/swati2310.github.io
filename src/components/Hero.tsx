@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 flex items-center justify-center">
         <div className="max-w-2xl w-full">
           {/* Main card */}
-          <div className="relative gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-pop-up overflow-hidden">
+          <div className="relative gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-pop-up overflow-hidden hover:animate-pop-up-hover">
             {/* Background Image */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"

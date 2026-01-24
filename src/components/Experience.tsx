@@ -85,7 +85,7 @@ const Experience = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group">
+                <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group hover:animate-pop-up-hover">
                   {/* Date and Title */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">

@@ -81,7 +81,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-pop-up"
+              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-pop-up hover:animate-pop-up-hover"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
@@ -119,7 +119,7 @@ const Skills = () => {
         </div>
         
         {/* Awards Section */}
-        <Card className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary animate-pop-up" style={{ animationDelay: '0.5s' }}>
+        <Card className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary animate-pop-up hover:animate-pop-up-hover" style={{ animationDelay: '0.5s' }}>
           <CardHeader>
             <div className="flex items-center gap-4">
               <div className="p-3 rounded-lg bg-accent/20 text-accent border border-accent/30">

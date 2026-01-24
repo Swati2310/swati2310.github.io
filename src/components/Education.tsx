@@ -40,7 +40,7 @@ const Education = () => {
           {education.map((edu, index) => (
             <Card
               key={index}
-              className="relative overflow-hidden gradient-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-pop-up"
+              className="relative overflow-hidden gradient-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-pop-up hover:animate-pop-up-hover"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <CardContent className="relative z-10 p-8">

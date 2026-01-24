@@ -89,7 +89,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-pop-up"
+              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-pop-up hover:animate-pop-up-hover"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">

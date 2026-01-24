@@ -87,7 +87,7 @@ const Contact = () => {
         
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 animate-pop-up">
+          <Card className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 animate-pop-up hover:animate-pop-up-hover">
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-3">
                 <Send className="w-6 h-6 text-primary" />

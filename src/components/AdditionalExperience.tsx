@@ -38,7 +38,7 @@ const AdditionalExperience = () => {
               style={{ animationDelay: `${index * 0.3}s` }}
             >
               {/* Content Card */}
-              <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-pop-up hover:scale-[1.02]"
+              <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-pop-up hover:scale-[1.02] hover:animate-pop-up-hover"
                 style={{ animationDelay: `${index * 0.3 + 0.1}s` }}
               >
                 {/* Date and Title */}
