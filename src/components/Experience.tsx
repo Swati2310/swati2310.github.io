@@ -25,10 +25,10 @@ const Experience = () => {
       current: false,
       image: "/Voltihost_Image.png",
       achievements: [
-        "Built XGBoost regression models for demand forecasting achieving 85% R² accuracy and 7.2 MAE, handling 121-day dataset with 66.9% missing data through advanced interpolation strategies",
-        "Engineered comprehensive feature pipeline with 15+ features including time-series lags, rolling statistics, weather correlations, and temporal indicators for ML model training",
-        "Implemented production ML infrastructure with ONNX format export, model serialization, and deployed live forecasting API with configurable horizons (1-30 days)",
-        "Maximized model performance through hyperparameter tuning and cross-validation, achieving significant improvement over baseline models (Prophet R² = -229 vs XGBoost R² = 0.85)"
+        "Developed XGBoost demand forecasting models achieving 85% R² accuracy and 7.2 MAE on 121-day dataset with 66.9% missing data using advanced interpolation",
+        "Built feature engineering pipeline with 15+ time-series features including lags, rolling statistics, and weather correlations for ML training",
+        "Deployed production ML infrastructure with ONNX export and live FastAPI forecasting service supporting 1-30 day prediction horizons",
+        "Optimized model performance via hyperparameter tuning and cross-validation, improving from Prophet R² = -229 to XGBoost R² = 0.85"
       ],
       skills: ["Python", "XGBoost", "Scikit-learn", "Pandas", "NumPy", "ONNX", "FastAPI", "Time Series", "Feature Engineering", "Model Deployment"]
     },
