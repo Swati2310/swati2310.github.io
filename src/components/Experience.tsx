@@ -139,11 +139,11 @@ const Experience = () => {
 
                   {/* Experience Image (optional) - between achievements and skills */}
                   {exp.image && (
-                    <div className="w-[calc(100%+3rem)] -mx-6 overflow-hidden border-x-0 border-y border-border/60 bg-card mb-6">
+                    <div className="w-[calc(100%+3rem)] -mx-6 overflow-hidden border-x-0 border-y border-border/60 bg-card mb-6 h-64">
                       <img
                         src={exp.image}
                         alt={exp.title}
-                        className="w-full h-auto max-h-64 object-contain"
+                        className="w-full h-full object-cover"
                         loading="lazy"
                       />
                     </div>
