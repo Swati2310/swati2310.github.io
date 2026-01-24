@@ -90,11 +90,11 @@ const Education = () => {
 
                   {/* Institution Image (between info and rest of content) */}
                   {edu.image && (
-                    <div className="w-full max-w-md mx-auto rounded-lg overflow-hidden border border-border/60 shadow-md bg-card">
+                    <div className="w-full max-w-2xl mx-auto rounded-lg overflow-hidden border border-border/60 shadow-md bg-card">
                       <img
                         src={edu.image}
                         alt={edu.institution}
-                        className="w-full h-48 object-cover"
+                        className="w-full h-auto object-contain"
                         loading="lazy"
                       />
                     </div>
