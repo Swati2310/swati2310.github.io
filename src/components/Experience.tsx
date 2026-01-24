@@ -4,39 +4,15 @@ import { Calendar, MapPin, Building, Code } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Residential Safety Program (RSP) - Early Shift Student Assistant",
-      company: "Stony Brook University",
-      location: "Stony Brook, United States",
-      period: "November 2025 – Present",
-      type: "Part-time",
-      current: true,
-      image: "/campus_rsp.jpg",
-      achievements: [
-        "Served as a front-facing campus representative providing walk-escort services, coordinating dispatch operations, and maintaining incident documentation while ensuring facility safety compliance through routine inspections of residential halls and safety equipment"
-      ],
-      skills: ["Communication", "Administrative Support", "Safety Compliance", "Documentation", "Customer Service", "Emergency Response", "Campus Operations"]
-    },
-    {
-      title: "AI Software Engineer Intern",
-      company: "Volithost LLC",
-      location: "Florida, United States",
-      period: "May 2025 – August 2025",
+      title: "Software Engineer Intern",
+      company: "Infosys Ltd.",
+      location: "Mysore, Karnataka, India",
+      period: "January 2019 – July 2019",
       type: "Internship",
       current: false,
-      image: "/Voltihost_Image.png",
-      achievements: "Developed XGBoost demand forecasting models achieving 85% R² accuracy and 7.2 MAE on 121-day dataset with 66.9% missing data. Engineered feature pipeline with 15+ time-series features (lags, rolling statistics, weather correlations) and deployed production ML infrastructure with ONNX export and FastAPI forecasting service supporting 1-30 day horizons. Optimized performance through hyperparameter tuning, improving from Prophet R² = -229 to XGBoost R² = 0.85.",
-      skills: ["Python", "XGBoost", "Scikit-learn", "Pandas", "NumPy", "ONNX", "FastAPI", "Time Series", "Feature Engineering", "Model Deployment"]
-    },
-    {
-      title: "Senior Software Engineer",
-      company: "Infosys Ltd.",
-      location: "Pune, India",
-      period: "August 2021 – July 2024",
-      type: "Full-time",
-      current: false,
-      images: ["/infosys.jpg", "/BOFA.webp"],
-      achievements: "Installed and managed Finacle Core Banking on OpenShift and AWS clusters for 20+ applications with 5 annual installations. Built and deployed JFrog and ECR images in Kubernetes, automating patch deployments to achieve 85% reduction in deployment time and 80% increase in accuracy. Deployed Dockerized applications on AWS EKS using Kubernetes, Docker, Ansible, and GitLab, creating 15+ CI/CD pipelines and achieving 40% reduction in infrastructure costs. Led DevOps team of 3 managing end-to-end operations for SEPA and APAC projects, overseeing 50+ integrations for BOFFA client. Managed Escrow deposit deployments for Finacle applications across 3+ versions with NCC Group for Bank of America.",
-      skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
+      image: "/mysore.jpg",
+      achievements: "Developed and deployed a Railway Transportation Ticket Management System using Java, Spring Boot, and Angular 4, ensuring system reliability and scalability for customer operations. Designed and implemented RESTful APIs for seamless frontend-backend integration and optimized SQL queries for efficient database operations. Collaborated with cross-functional teams to resolve industry-based customer complaint queries, applying data structures and Python for data analysis and problem-solving. Completed comprehensive training in enterprise software development, full-stack technologies, and agile methodologies.",
+      skills: ["Java", "Spring Boot", "REST APIs", "Angular 4", "SQL", "Python", "Data Structures", "Full-Stack Development", "System Design", "Agile Methodologies"]
     },
     {
       title: "Software Engineer",
@@ -50,15 +26,39 @@ const Experience = () => {
       skills: ["SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle", "RReport", "JSP"]
     },
     {
-      title: "Software Engineer Intern",
+      title: "Senior Software Engineer",
       company: "Infosys Ltd.",
-      location: "Mysore, Karnataka, India",
-      period: "January 2019 – July 2019",
+      location: "Pune, India",
+      period: "August 2021 – July 2024",
+      type: "Full-time",
+      current: false,
+      images: ["/infosys.jpg", "/BOFA.webp"],
+      achievements: "Installed and managed Finacle Core Banking on OpenShift and AWS clusters for 20+ applications with 5 annual installations. Built and deployed JFrog and ECR images in Kubernetes, automating patch deployments to achieve 85% reduction in deployment time and 80% increase in accuracy. Deployed Dockerized applications on AWS EKS using Kubernetes, Docker, Ansible, and GitLab, creating 15+ CI/CD pipelines and achieving 40% reduction in infrastructure costs. Led DevOps team of 3 managing end-to-end operations for SEPA and APAC projects, overseeing 50+ integrations for BOFFA client. Managed Escrow deposit deployments for Finacle applications across 3+ versions with NCC Group for Bank of America.",
+      skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
+    },
+    {
+      title: "AI Software Engineer Intern",
+      company: "Volithost LLC",
+      location: "Florida, United States",
+      period: "May 2025 – August 2025",
       type: "Internship",
       current: false,
-      image: "/mysore.jpg",
-      achievements: "Developed and deployed a Railway Transportation Ticket Management System using Java, Spring Boot, and Angular 4, ensuring system reliability and scalability for customer operations. Designed and implemented RESTful APIs for seamless frontend-backend integration and optimized SQL queries for efficient database operations. Collaborated with cross-functional teams to resolve industry-based customer complaint queries, applying data structures and Python for data analysis and problem-solving. Completed comprehensive training in enterprise software development, full-stack technologies, and agile methodologies.",
-      skills: ["Java", "Spring Boot", "REST APIs", "Angular 4", "SQL", "Python", "Data Structures", "Full-Stack Development", "System Design", "Agile Methodologies"]
+      image: "/Voltihost_Image.png",
+      achievements: "Developed XGBoost demand forecasting models achieving 85% R² accuracy and 7.2 MAE on 121-day dataset with 66.9% missing data. Engineered feature pipeline with 15+ time-series features (lags, rolling statistics, weather correlations) and deployed production ML infrastructure with ONNX export and FastAPI forecasting service supporting 1-30 day horizons. Optimized performance through hyperparameter tuning, improving from Prophet R² = -229 to XGBoost R² = 0.85.",
+      skills: ["Python", "XGBoost", "Scikit-learn", "Pandas", "NumPy", "ONNX", "FastAPI", "Time Series", "Feature Engineering", "Model Deployment"]
+    },
+    {
+      title: "Residential Safety Program (RSP) - Early Shift Student Assistant",
+      company: "Stony Brook University",
+      location: "Stony Brook, United States",
+      period: "November 2025 – Present",
+      type: "Part-time",
+      current: true,
+      image: "/campus_rsp.jpg",
+      achievements: [
+        "Served as a front-facing campus representative providing walk-escort services, coordinating dispatch operations, and maintaining incident documentation while ensuring facility safety compliance through routine inspections of residential halls and safety equipment"
+      ],
+      skills: ["Communication", "Administrative Support", "Safety Compliance", "Documentation", "Customer Service", "Emergency Response", "Campus Operations"]
     }
   ];
 
