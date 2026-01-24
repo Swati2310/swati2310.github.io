@@ -28,7 +28,7 @@ const Education = () => {
     <section id="education" className="py-20 px-6">
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16 animate-pop-up">
           <h2 className="text-4xl font-bold mb-4 text-primary">Education</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Building a strong foundation in Data Science and Computer Science
@@ -40,7 +40,7 @@ const Education = () => {
           {education.map((edu, index) => (
             <Card
               key={index}
-              className="relative overflow-hidden gradient-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-slide-in-right"
+              className="relative overflow-hidden gradient-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-pop-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <CardContent className="relative z-10 p-8">

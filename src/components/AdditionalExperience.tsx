@@ -22,7 +22,7 @@ const AdditionalExperience = () => {
     <section id="additional-experience" className="py-20 px-6">
       <div className="container mx-auto max-w-4xl relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16 animate-pop-up">
           <h2 className="text-4xl font-bold mb-4 text-primary">Additional Experience</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Campus involvement and professional development
@@ -34,7 +34,7 @@ const AdditionalExperience = () => {
           {additionalExperiences.map((exp, index) => (
             <div 
               key={index} 
-              className="relative animate-fade-in-up"
+              className="relative animate-pop-up"
               style={{ animationDelay: `${index * 0.3}s` }}
             >
               {/* Content Card */}

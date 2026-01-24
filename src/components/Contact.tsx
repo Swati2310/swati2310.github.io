@@ -78,7 +78,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16 animate-pop-up">
           <h2 className="text-4xl font-bold mb-4 text-glow">Get In Touch</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Let's discuss opportunities in Data Science, AI, or Software Engineering
@@ -87,7 +87,7 @@ const Contact = () => {
         
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 animate-fade-in-up">
+          <Card className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 animate-pop-up">
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-3">
                 <Send className="w-6 h-6 text-primary" />
@@ -169,7 +169,7 @@ const Contact = () => {
           </Card>
           
           {/* Contact Information */}
-          <div className="space-y-8 animate-slide-in-right">
+          <div className="space-y-8 animate-pop-up">
             <div>
               <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">

@@ -53,7 +53,7 @@ const Experience = () => {
     <section id="experience" className="py-20 px-6 bg-secondary/5 relative overflow-hidden">
       <div className="container mx-auto max-w-4xl relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16 animate-pop-up">
           <h2 className="text-4xl font-bold mb-4 text-primary">Experience</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             My professional journey so far
@@ -70,7 +70,7 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div 
                 key={index} 
-                className="relative pl-20 animate-fade-in-up"
+                className="relative pl-20 animate-pop-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Timeline Icon */}

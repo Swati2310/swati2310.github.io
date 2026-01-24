@@ -77,7 +77,7 @@ const Projects = () => {
     <section id="projects" className="py-20 px-6 bg-secondary/5">
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16 animate-pop-up">
           <h2 className="text-4xl font-bold mb-4 text-primary">Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of my work spanning Data Science, Machine Learning, and Software Engineering
@@ -89,7 +89,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-fade-in-up"
+              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-pop-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">

@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 flex items-center justify-center">
         <div className="max-w-2xl w-full">
           {/* Main card */}
-          <div className="relative gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-fade-in-up overflow-hidden">
+          <div className="relative gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-pop-up overflow-hidden">
             {/* Background Image */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"
@@ -54,7 +54,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <div className="animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
+            <div className="animate-pop-up" style={{ animationDelay: '0.05s' }}>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
                 SWATI
               </h1>

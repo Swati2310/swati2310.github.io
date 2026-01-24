@@ -69,7 +69,7 @@ const Skills = () => {
     <section id="skills" className="py-20 px-6 bg-secondary/5">
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16 animate-pop-up">
           <h2 className="text-4xl font-bold mb-4 text-primary">Technical Skills</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A comprehensive overview of my technical expertise spanning multiple domains including AI/ML, software development, and various programming languages
@@ -81,7 +81,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-slide-in-right"
+              className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary group animate-pop-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
@@ -119,7 +119,7 @@ const Skills = () => {
         </div>
         
         {/* Awards Section */}
-        <Card className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        <Card className="gradient-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-primary animate-pop-up" style={{ animationDelay: '0.5s' }}>
           <CardHeader>
             <div className="flex items-center gap-4">
               <div className="p-3 rounded-lg bg-accent/20 text-accent border border-accent/30">
@@ -145,19 +145,19 @@ const Skills = () => {
         
         {/* Statistics */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="animate-pop-up" style={{ animationDelay: '0.6s' }}>
             <div className="text-3xl font-bold text-primary mb-2">5+</div>
             <div className="text-muted-foreground text-sm">Years Experience</div>
           </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+          <div className="animate-pop-up" style={{ animationDelay: '0.7s' }}>
             <div className="text-3xl font-bold text-accent mb-2">30+</div>
             <div className="text-muted-foreground text-sm">Technologies</div>
           </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <div className="animate-pop-up" style={{ animationDelay: '0.8s' }}>
             <div className="text-3xl font-bold text-primary mb-2">50+</div>
             <div className="text-muted-foreground text-sm">Projects Delivered</div>
           </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
+          <div className="animate-pop-up" style={{ animationDelay: '0.9s' }}>
             <div className="text-3xl font-bold text-accent mb-2">3</div>
             <div className="text-muted-foreground text-sm">Major Projects</div>
           </div>
