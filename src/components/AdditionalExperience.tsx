@@ -35,10 +35,12 @@ const AdditionalExperience = () => {
             <div 
               key={index} 
               className="relative animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              style={{ animationDelay: `${index * 0.3}s` }}
             >
               {/* Content Card */}
-              <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group">
+              <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group animate-pop-up hover:scale-[1.02]"
+                style={{ animationDelay: `${index * 0.3 + 0.1}s` }}
+              >
                 {/* Date and Title */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
