@@ -90,7 +90,7 @@ const Education = () => {
 
                   {/* Institution Image (between info and rest of content) */}
                   {edu.image && (
-                    <div className="w-full -mx-8 rounded-lg overflow-hidden border-x-0 border-y border-border/60 shadow-md bg-card">
+                    <div className="w-[calc(100%+4rem)] -mx-8 overflow-hidden border-x-0 border-y border-border/60 bg-card">
                       <img
                         src={edu.image}
                         alt={edu.institution}
