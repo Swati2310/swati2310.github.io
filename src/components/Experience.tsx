@@ -4,7 +4,7 @@ import { Calendar, MapPin, Building, Code } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Residential Safety Program (RSP) - Early Shift Worker",
+      title: "Residential Safety Program (RSP) - Early Shift Student Assistant",
       company: "Stony Brook University",
       location: "Stony Brook, United States",
       period: "November 2025 – Present",
@@ -155,11 +155,11 @@ const Experience = () => {
 
                     {/* Experience Image (optional) */}
                     {exp.image && (
-                      <div className="w-full md:w-56 lg:w-64 flex-shrink-0 rounded-lg overflow-hidden border border-border/60 shadow-md">
+                      <div className="w-full md:w-64 lg:w-80 flex-shrink-0 rounded-lg overflow-hidden border border-border/60 shadow-md bg-card">
                         <img
                           src={exp.image}
                           alt={exp.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-auto object-contain"
                           loading="lazy"
                         />
                       </div>
