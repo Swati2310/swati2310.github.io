@@ -94,7 +94,7 @@ const Education = () => {
                       <img
                         src={edu.image}
                         alt={edu.institution}
-                        className="w-full h-auto object-contain"
+                        className="w-full h-48 object-cover"
                         loading="lazy"
                       />
                     </div>

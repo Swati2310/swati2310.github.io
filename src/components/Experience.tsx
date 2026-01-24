@@ -143,7 +143,7 @@ const Experience = () => {
                       <img
                         src={exp.image}
                         alt={exp.title}
-                        className="w-full h-auto object-contain"
+                        className="w-full h-48 object-cover"
                         loading="lazy"
                       />
                     </div>
