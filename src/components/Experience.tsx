@@ -21,7 +21,7 @@ const Experience = () => {
       period: "August 2021 – July 2024",
       type: "Full-time",
       current: false,
-      images: ["/infosys.jpg", "/BOFA.webp"],
+      images: ["/infosys.jpg", "/BOFA.jpg"],
       achievements: "Managed Finacle Core Banking on OpenShift and AWS clusters for 20+ applications. Automated patch deployments achieving 85% reduction in deployment time. Deployed Dockerized applications on AWS EKS, creating 15+ CI/CD pipelines and achieving 40% infrastructure cost reduction. Led DevOps team of 3 for SEPA and APAC projects.",
       skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
     },
