@@ -51,7 +51,7 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-20 px-6 bg-secondary/5 relative overflow-hidden">
-      <div className="container mx-auto max-w-4xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-pop-up">
           <h2 className="text-4xl font-bold mb-4 text-primary">Experience</h2>
@@ -60,35 +60,40 @@ const Experience = () => {
           </p>
         </div>
         
-        {/* Timeline Container */}
+        {/* Horizontal Timeline Container */}
         <div className="relative">
-          {/* Vertical Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary opacity-40"></div>
+          {/* Horizontal Timeline Line */}
+          <div className="hidden lg:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary opacity-40"></div>
           
-          {/* Experience Timeline */}
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div 
-                key={index} 
-                className="relative pl-20 animate-pop-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                {/* Timeline Icon */}
-                <div className="absolute left-0 top-0">
-                  <div className="w-16 h-16 rounded-full border-4 border-primary/60 bg-card flex items-center justify-center shadow-lg shadow-primary/30">
-                    {exp.type === 'Internship' ? (
-                      <Code className="w-7 h-7 text-primary" />
-                    ) : (
-                      <Building className="w-7 h-7 text-primary" />
-                    )}
+          {/* Experience Timeline - Horizontal Scroll */}
+          <div className="overflow-x-auto pb-8 -mx-6 px-6 scrollbar-hide">
+            <div className="flex lg:flex-row flex-col gap-8 lg:min-w-max">
+              {experiences.map((exp, index) => (
+                <div 
+                  key={index} 
+                  className="relative flex-shrink-0 lg:w-96 w-full animate-pop-up"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  {/* Timeline Icon - Above card on desktop, left on mobile */}
+                  <div className="absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-6 left-0 top-6 lg:top-0 z-20">
+                    <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full border-4 border-primary/60 bg-card flex items-center justify-center shadow-lg shadow-primary/30">
+                      {exp.type === 'Internship' ? (
+                        <Code className="w-5 h-5 lg:w-7 lg:h-7 text-primary" />
+                      ) : (
+                        <Building className="w-5 h-5 lg:w-7 lg:h-7 text-primary" />
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                {/* Content Card */}
-                <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group hover:animate-pop-up-hover">
-                  {/* Date and Title */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
+                  {/* Connecting Line - Only on desktop */}
+                  {index < experiences.length - 1 && (
+                    <div className="hidden lg:block absolute top-12 left-full w-8 h-1 bg-gradient-to-r from-primary/40 to-transparent"></div>
+                  )}
+
+                  {/* Content Card */}
+                  <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group hover:animate-pop-up-hover lg:mt-16 mt-0 lg:ml-0 ml-12 h-full flex flex-col">
+                    {/* Date and Title */}
+                    <div className="mb-4">
                       <div className="text-muted-foreground text-sm mb-2 font-medium flex items-center gap-2">
                         <Calendar className="w-4 h-4 text-primary" />
                         <span>{exp.period}</span>
@@ -109,63 +114,63 @@ const Experience = () => {
                         <span>{exp.type}</span>
                       </div>
                     </div>
-                  </div>
-                  
-                  {/* Achievements */}
-                  <div className="space-y-3 mb-6">
-                    {typeof exp.achievements === 'string' ? (
-                      <p className="text-muted-foreground leading-relaxed text-sm">{exp.achievements}</p>
-                    ) : (
-                      (exp.achievements as string[]).map((achievement, achIndex) => (
-                        <div key={achIndex} className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                          <p className="text-muted-foreground leading-relaxed text-sm">{achievement}</p>
-                        </div>
-                      ))
-                    )}
-                  </div>
+                    
+                    {/* Achievements */}
+                    <div className="space-y-3 mb-6 flex-grow">
+                      {typeof exp.achievements === 'string' ? (
+                        <p className="text-muted-foreground leading-relaxed text-sm">{exp.achievements}</p>
+                      ) : (
+                        (exp.achievements as string[]).map((achievement, achIndex) => (
+                          <div key={achIndex} className="flex gap-3">
+                            <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                            <p className="text-muted-foreground leading-relaxed text-sm">{achievement}</p>
+                          </div>
+                        ))
+                      )}
+                    </div>
 
-                  {/* Experience Image(s) (optional) - between achievements and skills */}
-                  {exp.images && Array.isArray(exp.images) && exp.images.length > 0 && (
-                    <div className="w-[calc(100%+3rem)] -mx-6 mb-6 grid grid-cols-2 gap-2">
-                      {exp.images.map((img, imgIndex) => (
-                        <div key={imgIndex} className="overflow-hidden border-x-0 border-y border-border/60 bg-card h-64">
-                          <img
-                            src={img}
-                            alt={`${exp.title} - Image ${imgIndex + 1}`}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                          />
-                        </div>
+                    {/* Experience Image(s) */}
+                    {exp.images && Array.isArray(exp.images) && exp.images.length > 0 && (
+                      <div className="w-full mb-6 grid grid-cols-2 gap-2">
+                        {exp.images.map((img, imgIndex) => (
+                          <div key={imgIndex} className="overflow-hidden border border-border/60 bg-card h-32 rounded-lg">
+                            <img
+                              src={img}
+                              alt={`${exp.title} - Image ${imgIndex + 1}`}
+                              className="w-full h-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {exp.image && !exp.images && (
+                      <div className="w-full overflow-hidden border border-border/60 bg-card mb-6 h-48 rounded-lg">
+                        <img
+                          src={exp.image}
+                          alt={exp.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    
+                    {/* Skills */}
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50 mt-auto">
+                      {exp.skills.map((skill, skillIndex) => (
+                        <Badge 
+                          key={skillIndex} 
+                          variant="secondary"
+                          className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs"
+                        >
+                          {skill}
+                        </Badge>
                       ))}
                     </div>
-                  )}
-                  {exp.image && !exp.images && (
-                    <div className="w-[calc(100%+3rem)] -mx-6 overflow-hidden border-x-0 border-y border-border/60 bg-card mb-6 h-64">
-                      <img
-                        src={exp.image}
-                        alt={exp.title}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
-                  
-                  {/* Skills */}
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
-                    {exp.skills.map((skill, skillIndex) => (
-                      <Badge 
-                        key={skillIndex} 
-                        variant="secondary"
-                        className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-xs"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
