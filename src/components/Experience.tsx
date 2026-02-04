@@ -4,6 +4,17 @@ import { Calendar, MapPin, Building, Code } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "Residential Safety Program (RSP) - Early Shift Student Assistant",
+      company: "Stony Brook University",
+      location: "Stony Brook, United States",
+      period: "November 2025 – Present",
+      type: "Part-time",
+      current: true,
+      image: "/campus_rsp.jpg",
+      achievements: "Served as a front-facing campus representative providing walk-escort services, coordinating dispatch operations, and maintaining incident documentation while ensuring facility safety compliance through routine inspections of residential halls and safety equipment.",
+      skills: ["Communication", "Administrative Support", "Safety Compliance", "Documentation", "Customer Service", "Emergency Response", "Campus Operations"]
+    },
+    {
       title: "AI Software Engineer Intern",
       company: "Volithost LLC",
       location: "Florida, United States",
