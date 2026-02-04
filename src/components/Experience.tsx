@@ -50,24 +50,24 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-6 bg-secondary/5 relative overflow-hidden">
-      <div className="container mx-auto max-w-7xl relative z-10">
+    <section id="experience" className="py-20 bg-secondary/5 relative overflow-hidden">
+      <div className="w-full relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-pop-up">
+        <div className="text-center mb-16 px-6 animate-pop-up">
           <h2 className="text-4xl font-bold mb-4 text-primary">Experience</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             My professional journey so far
           </p>
         </div>
         
-        {/* Horizontal Timeline Container */}
-        <div className="relative">
-          {/* Horizontal Timeline Line */}
+        {/* Horizontal Timeline Container - Full Width */}
+        <div className="relative w-full">
+          {/* Horizontal Timeline Line - Full Width */}
           <div className="hidden lg:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary opacity-40"></div>
           
-          {/* Experience Timeline - Horizontal Scroll */}
-          <div className="overflow-x-auto pb-8 -mx-6 px-6 scrollbar-hide">
-            <div className="flex lg:flex-row flex-col gap-8 lg:min-w-max">
+          {/* Experience Timeline - Horizontal Scroll - Full Width */}
+          <div className="overflow-x-auto pb-8 pt-8 scrollbar-hide w-full">
+            <div className="flex lg:flex-row flex-col gap-8 lg:min-w-max px-6 lg:px-12 lg:pr-12">
               {experiences.map((exp, index) => (
                 <div 
                   key={index} 
@@ -75,23 +75,23 @@ const Experience = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Timeline Icon - Above card on desktop, left on mobile */}
-                  <div className="absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-6 left-0 top-6 lg:top-0 z-20">
-                    <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full border-4 border-primary/60 bg-card flex items-center justify-center shadow-lg shadow-primary/30">
+                  <div className="absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-8 left-0 top-6 lg:top-0 z-20">
+                    <div className="w-14 h-14 lg:w-20 lg:h-20 rounded-full border-4 border-primary/60 bg-card flex items-center justify-center shadow-lg shadow-primary/30">
                       {exp.type === 'Internship' ? (
-                        <Code className="w-5 h-5 lg:w-7 lg:h-7 text-primary" />
+                        <Code className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                       ) : (
-                        <Building className="w-5 h-5 lg:w-7 lg:h-7 text-primary" />
+                        <Building className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                       )}
                     </div>
                   </div>
 
                   {/* Connecting Line - Only on desktop */}
                   {index < experiences.length - 1 && (
-                    <div className="hidden lg:block absolute top-12 left-full w-8 h-1 bg-gradient-to-r from-primary/40 to-transparent"></div>
+                    <div className="hidden lg:block absolute top-12 left-full w-8 h-1 bg-gradient-to-r from-primary/40 via-accent/30 to-primary/40"></div>
                   )}
 
                   {/* Content Card */}
-                  <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group hover:animate-pop-up-hover lg:mt-16 mt-0 lg:ml-0 ml-12 h-full flex flex-col">
+                  <div className="gradient-card rounded-xl border border-border/50 p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-primary group hover:animate-pop-up-hover lg:mt-20 mt-0 lg:ml-0 ml-12 h-full flex flex-col">
                     {/* Date and Title */}
                     <div className="mb-4">
                       <div className="text-muted-foreground text-sm mb-2 font-medium flex items-center gap-2">
