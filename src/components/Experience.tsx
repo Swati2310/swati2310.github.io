@@ -67,7 +67,7 @@ const Experience = () => {
           
           {/* Experience Timeline - Horizontal Scroll - Full Width */}
           <div className="overflow-x-auto pb-8 pt-8 scrollbar-hide w-full">
-            <div className="flex lg:flex-row flex-col gap-0 lg:min-w-max px-6 lg:px-12 lg:pr-12">
+            <div className="flex lg:flex-row flex-col gap-8 lg:min-w-max px-6 lg:px-12 lg:pr-12">
               {experiences.map((exp, index) => (
                 <div 
                   key={index} 
@@ -87,7 +87,7 @@ const Experience = () => {
 
                   {/* Connecting Line - Only on desktop */}
                   {index < experiences.length - 1 && (
-                    <div className="hidden lg:block absolute top-12 left-full w-0 h-1 bg-gradient-to-r from-primary/40 via-accent/30 to-primary/40"></div>
+                    <div className="hidden lg:block absolute top-12 left-full w-8 h-1 bg-gradient-to-r from-primary/40 via-accent/30 to-primary/40"></div>
                   )}
 
                   {/* Content Card */}
