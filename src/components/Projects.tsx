@@ -37,7 +37,8 @@ const Projects = () => {
       icon: <BarChart3 className="w-6 h-6" />,
       color: "secondary",
       count: "8",
-      backgroundImage: "/nyccrime.jpeg"
+      backgroundImage: "/nyccrime.jpeg",
+      githubUrl: "https://github.com/Swati2310/NYC_Crime_Analysis_in_R"
     },
     {
       title: "Enterprise Fitness Center Database Management System",
