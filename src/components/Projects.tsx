@@ -11,7 +11,8 @@ const Projects = () => {
       icon: <Globe className="w-6 h-6" />,
       color: "primary",
       count: "9",
-      backgroundImage: "/Attached_image.png"
+      backgroundImage: "/Attached_image.png",
+      githubUrl: "https://github.com/Swati2310/unified_multilingual_RAG"
     },
     {
       title: "Netflix Recommender System at Scale",
@@ -134,14 +135,24 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex gap-3 pt-2">
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="group hover:bg-primary hover:border-primary"
-                    >
-                      <Github className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                      View Code
-                    </Button>
+                    {project.githubUrl && (
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="group hover:bg-primary hover:border-primary"
+                        asChild
+                      >
+                        <a 
+                          href={project.githubUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <Github className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                          View Code
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </CardContent>
