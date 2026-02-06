@@ -46,7 +46,8 @@ const Projects = () => {
       icon: <Database className="w-6 h-6" />,
       color: "accent",
       count: "7",
-      backgroundImage: "/database_fitness.png"
+      backgroundImage: "/database_fitness.png",
+      githubUrl: "https://github.com/Swati2310/Fitness_database_system"
     }
   ];
 
