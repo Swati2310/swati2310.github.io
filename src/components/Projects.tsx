@@ -20,7 +20,8 @@ const Projects = () => {
       icon: <Film className="w-6 h-6" />,
       color: "accent",
       count: "11",
-      backgroundImage: "/Netflix-Recommendation-Engine-Working-StartupTalky.jpg"
+      backgroundImage: "/Netflix-Recommendation-Engine-Working-StartupTalky.jpg",
+      githubUrl: "https://github.com/Swati2310/NetflixRecommenderSystem"
     },
     {
       title: "Real-Time Demand Forecasting with Advanced ML Pipeline",
