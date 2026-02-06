@@ -69,7 +69,7 @@ const Gallery = () => {
     
     if (failedImages.has(imagePath)) {
       return (
-        <div className={`w-full flex items-center justify-center bg-muted/40 rounded-lg p-8 ${!isFullWidth ? 'h-64' : ''}`}>
+        <div className="w-full flex items-center justify-center bg-muted/40 rounded-lg p-8">
           <div className="text-center">
             <p className="text-sm text-muted-foreground font-medium">Image unavailable</p>
             <p className="text-xs text-muted-foreground mt-1 opacity-70">({imagePath.split('/').pop()})</p>
@@ -80,11 +80,11 @@ const Gallery = () => {
 
     return (
       <div className="w-full group animate-fade-in-up" style={{ animationDelay: `${index * 0.03}s` }}>
-        <div className={`relative overflow-hidden rounded-lg bg-card border border-border/50 shadow-lg hover:shadow-2xl hover:border-primary/50 transition-all duration-500 group-hover:-translate-y-1 ${!isFullWidth ? 'h-64' : ''}`}>
+        <div className="relative overflow-hidden rounded-lg bg-card border border-border/50 shadow-lg hover:shadow-2xl hover:border-primary/50 transition-all duration-500 group-hover:-translate-y-1">
           <img
             src={imagePath}
             alt={`Gallery image ${index + 1}`}
-            className={`w-full ${isFullWidth ? 'h-auto object-contain' : 'h-full object-cover'} transform group-hover:scale-[1.02] transition-transform duration-700 ease-out`}
+            className="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-700 ease-out"
             loading={index < 9 ? "eager" : "lazy"}
             onLoad={() => handleImageLoad(imagePath)}
             onError={(e) => {
