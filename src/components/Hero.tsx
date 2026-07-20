@@ -7,7 +7,9 @@ const Hero = () => {
     const link = document.createElement('a');
     link.href = '/lovable-uploads/FnuSwati_Resume.pdf';
     link.download = 'FnuSwati_Resume.pdf';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   const openExternalLink = (url: string) => {
