@@ -5,8 +5,8 @@ const Hero = () => {
   const downloadResume = () => {
     // Create a link to download the resume PDF
     const link = document.createElement('a');
-    link.href = '/lovable-uploads/FNU_SWATI_RESUME.pdf';
-    link.download = 'FNU_SWATI_RESUME.pdf';
+    link.href = '/lovable-uploads/FnuSwati_Resume.pdf';
+    link.download = 'FnuSwati_Resume.pdf';
     link.click();
   };
 
@@ -56,8 +56,8 @@ const Hero = () => {
             
             <div className="animate-pop-up" style={{ animationDelay: '0.05s' }}>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
-                SWATI
-              </h1>
+              SWATI
+            </h1>
             </div>
             <p className="text-xl md:text-2xl text-white drop-shadow-lg mb-6">
             Data Scientist and AI Software Engineer | Machine Learning | Gen AI | DevOps | Cloud Technologies. 
