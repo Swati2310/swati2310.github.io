@@ -4,15 +4,18 @@ import { Calendar, MapPin, Building, Code } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Residential Safety Program (RSP) - Early Shift Student Assistant",
+      title: "Research Assistant",
       company: "Stony Brook University",
-      location: "Stony Brook, United States",
-      period: "November 2025 – Present",
+      location: "New York, United States",
+      period: "May 2026 – Present",
       type: "Part-time",
       current: true,
       image: "/campus_rsp.jpg",
-      achievements: "Served as a front-facing campus representative providing walk-escort services, coordinating dispatch operations, and maintaining incident documentation while ensuring facility safety compliance through routine inspections of residential halls and safety equipment.",
-      skills: ["Communication", "Administrative Support", "Safety Compliance", "Documentation", "Customer Service", "Emergency Response", "Campus Operations"]
+      achievements: [
+        "Designed and implemented an LLM simulation pipeline in Python to evaluate whether GPT, Claude, and Centaur can replicate human survey responses across 5 persona-conditioning conditions, using SQLite for experiment tracking and the Anthropic/OpenAI APIs for model inference.",
+        "Conducted causal inference research benchmarking LLM algorithmic fidelity against 144 human respondents using MAE, convex hull consistency tests, and stakeholder alignment metrics to assess in-distribution vs. out-of-distribution generalization of large language models."
+      ],
+      skills: ["Python", "LLM Evaluation", "GPT", "Claude", "SQLite", "Causal Inference", "Anthropic API", "OpenAI API"]
     },
     {
       title: "AI Software Engineer Intern",
