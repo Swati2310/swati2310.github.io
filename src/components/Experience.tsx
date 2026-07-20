@@ -4,7 +4,7 @@ import { Calendar, MapPin, Building, Code } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Research Assistant",
+      title: "AI Research Assistant",
       company: "Stony Brook University",
       location: "New York, United States",
       period: "May 2026 – Present",
