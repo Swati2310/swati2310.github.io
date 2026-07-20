@@ -19,36 +19,48 @@ const Experience = () => {
     },
     {
       title: "AI Software Engineer Intern",
-      company: "Volithost LLC",
-      location: "Florida, United States",
+      company: "Voltihost LLC",
+      location: "New York, United States",
       period: "May 2025 – August 2025",
       type: "Internship",
       current: false,
       image: "/Voltihost_Image.png",
-      achievements: "Developed XGBoost demand forecasting models achieving 85% R² accuracy on 121-day dataset. Engineered feature pipeline with 15+ time-series features and deployed production ML infrastructure with ONNX export and FastAPI service supporting 1-30 day horizons.",
-      skills: ["Python", "XGBoost", "Scikit-learn", "Pandas", "NumPy", "ONNX", "FastAPI", "Time Series", "Feature Engineering", "Model Deployment"]
+      achievements: [
+        "Delivered an ML demand forecasting pipeline with 15+ engineered features achieving 91% accuracy, serving 7 to 30 day predictions in sub-3s latency via ONNX runtime on Vercel serverless infrastructure.",
+        "Built an agentic text-to-SQL system for a demand analytics tool using GPT-4o function calling and schema-aware prompting, enabling sales teams to query forecasting data with 92% SQL generation accuracy."
+      ],
+      skills: ["Python", "ONNX", "Vercel", "GPT-4o", "Function Calling", "Time Series Forecasting", "Feature Engineering", "Text-to-SQL"]
     },
     {
-      title: "Senior Software Engineer",
+      title: "Senior Software Engineer (ML)",
       company: "Infosys Ltd.",
       location: "Pune, India",
-      period: "August 2021 – July 2024",
+      period: "January 2022 – May 2024",
       type: "Full-time",
       current: false,
-      images: ["/infosys.jpg", "/BOFA.jpg"],
-      achievements: "Managed Finacle Core Banking on OpenShift and AWS clusters for 20+ applications. Automated patch deployments achieving 85% reduction in deployment time. Deployed Dockerized applications on AWS EKS, creating 15+ CI/CD pipelines and achieving 40% infrastructure cost reduction. Led DevOps team of 3 for SEPA and APAC projects.",
-      skills: ["OpenShift", "AWS", "Kubernetes", "Docker", "Ansible", "GitLab", "Python", "SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle"]
+      image: "/InfosysPune.jpg",
+      achievements: [
+        "Developed an IT support ticket classification system for Finacle e-banking using fine-tuned DistilBERT and MLflow experiment tracking, deployed on AWS SageMaker with CodePipeline/CodeBuild, achieving 85% accuracy that halved SLA response times and saved $0.6M annually.",
+        "Enhanced the support pipeline with QLoRA fine-tuned Llama 2 for domain-specific summarization and a retrieval layer using LangChain and FAISS, enabling auto-routing and contextual resolution suggestions that reduced manual ticket triage by ~35%.",
+        "Implemented a REST API-enabled ID document classification service using AWS Textract and Lambda, with unit-tested serverless functions handling extraction and routing across multiple Finacle banking workflows."
+      ],
+      skills: ["DistilBERT", "MLflow", "AWS SageMaker", "CodePipeline", "QLoRA", "Llama 2", "LangChain", "FAISS", "AWS Textract", "AWS Lambda", "Finacle"]
     },
     {
       title: "Software Engineer",
       company: "Infosys Ltd.",
       location: "Pune, India",
-      period: "August 2019 – July 2021",
+      period: "August 2019 – December 2021",
       type: "Full-time",
       current: false,
-      image: "/InfosysPune.jpg",
-      achievements: "Maintained OLAP data and production environment reliability for Finacle e-banking, replicating 50+ databases across multiple accounts. Managed 10+ cloud servers using Jenkins CI/CD pipelines and optimized backend processes through complex SQL and PL/SQL queries.",
-      skills: ["SQL", "PL/SQL", "JavaScript", "Jenkins", "Finacle", "RReport", "JSP"]
+      images: ["/infosys.jpg", "/BOFA.jpg"],
+      achievements: [
+        "Led a 3-member DevOps team owning CIT, E2E, and production environments for 50+ integrations across EMEA, SEPA, and APAC for Bank of America, supporting $3M in annual client revenue.",
+        "Built and orchestrated Dockerized applications on AWS EKS using Kubernetes, JFrog, and ECR, creating 15+ CI/CD pipelines with GitLab and Ansible that cut deployment time by 50%.",
+        "Provisioned Finacle Core Banking on OpenShift and AWS clusters, standing up and managing environments for 20+ applications with 5+ installations annually to support evolving business requirements.",
+        "Maintained production reliability across 10+ cloud servers through cron automation, log archiving, and disk management, while replicating 50+ databases across accounts to support application structure changes in APAC."
+      ],
+      skills: ["DevOps", "AWS EKS", "Kubernetes", "JFrog", "ECR", "CI/CD", "GitLab", "Ansible", "OpenShift", "Finacle", "Cron Automation"]
     },
     {
       title: "Software Engineer Intern",
