@@ -37,8 +37,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "swati.swati@stonybrook.edu",
-      href: "mailto:swati.swati@stonybrook.edu",
+      value: "swati.guleria2319@gmail.com",
+      href: "mailto:swati.guleria2319@gmail.com",
       color: "primary"
     },
     {

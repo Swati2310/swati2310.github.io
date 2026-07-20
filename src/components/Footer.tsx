@@ -16,7 +16,7 @@ const Footer = () => {
     },
     {
       icon: <Mail className="w-5 h-5" />,
-      href: "mailto:swati.swati@stonybrook.edu",
+      href: "mailto:swati.guleria2319@gmail.com",
       label: "Email"
     }
   ];

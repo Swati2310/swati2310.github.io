@@ -73,7 +73,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-white/40 shadow-lg">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="font-medium text-primary">swati.swati@stonybrook.edu</span>
+                <span className="font-medium text-primary">swati.guleria2319@gmail.com</span>
               </div>
             </div>
             
