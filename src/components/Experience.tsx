@@ -10,7 +10,7 @@ const Experience = () => {
       period: "May 2026 – Present",
       type: "Part-time",
       current: true,
-      image: "/campus_rsp.jpg",
+      image: "/ceas.jpg",
       achievements: [
         "Designed and implemented an LLM simulation pipeline in Python to evaluate whether GPT, Claude, and Centaur can replicate human survey responses across 5 persona-conditioning conditions, using SQLite for experiment tracking and the Anthropic/OpenAI APIs for model inference.",
         "Conducted causal inference research benchmarking LLM algorithmic fidelity against 144 human respondents using MAE, convex hull consistency tests, and stakeholder alignment metrics to assess in-distribution vs. out-of-distribution generalization of large language models."

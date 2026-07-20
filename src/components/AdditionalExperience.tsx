@@ -7,9 +7,9 @@ const AdditionalExperience = () => {
       title: "Residential Safety Program (RSP) - Early Shift Student Assistant",
       company: "Stony Brook University",
       location: "Stony Brook, United States",
-      period: "November 2025 – Present",
+      period: "November 2025 – May 2026",
       type: "Part-time",
-      current: true,
+      current: false,
       image: "/campus_rsp.jpg",
       achievements: [
         "Served as a front-facing campus representative providing walk-escort services, coordinating dispatch operations, and maintaining incident documentation while ensuring facility safety compliance through routine inspections of residential halls and safety equipment"
