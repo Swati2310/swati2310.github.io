@@ -43,7 +43,7 @@ const Hero = () => {
             {/* Profile Photo */}
             <div className="flex justify-center mb-6">
               <div className="relative">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 hover:scale-105">
+                <div className="w-36 h-44 md:w-44 md:h-56 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 hover:scale-105">
                   <img 
                     src="/Profile_grad.jpg"
                     alt="Swati - AI Software Engineer" 
