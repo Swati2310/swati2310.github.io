@@ -50,9 +50,6 @@ const Hero = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-2 border-background">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                </div>
               </div>
             </div>
             
