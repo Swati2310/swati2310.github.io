@@ -33,26 +33,13 @@ const Hero = () => {
             {/* Background Image */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"
-              style={{ backgroundImage: 'url(/nyc-skyline-bg.jpg)' }}
+              style={{ backgroundImage: 'url(/Profile_grad.jpg)' }}
             />
             {/* Light overlay to keep text readable while showing skyline */}
             <div className="absolute inset-0 bg-gradient-to-br from-background/22 via-background/18 to-background/22" />
             
             {/* Content */}
             <div className="relative z-10">
-            {/* Profile Photo */}
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <div className="w-36 h-44 md:w-44 md:h-56 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 hover:scale-105">
-                  <img 
-                    src="/Profile_grad.jpg"
-                    alt="Swati - AI Software Engineer" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-            
             <div className="animate-pop-up" style={{ animationDelay: '0.05s' }}>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
               SWATI
