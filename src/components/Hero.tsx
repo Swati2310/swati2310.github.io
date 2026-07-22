@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Phone, Download, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 
 const Hero = () => {
   const downloadResume = () => {
@@ -46,15 +46,11 @@ const Hero = () => {
             </h1>
             </div>
             <p className="text-lg md:text-xl text-foreground font-medium mb-6 inline-block px-4 py-1.5 rounded-xl bg-background/80 backdrop-blur-sm">
-            Data Scientist and AI Software Engineer | Machine Learning | Gen AI | DevOps | Cloud Technologies.
+            Gen AI Engineer | Software Engineer | DS Grad @Stony Brook University
             </p>
-            
-            {/* Location and Contact */}
+
+            {/* Contact */}
             <div className="flex flex-wrap justify-center gap-6 mb-8 text-foreground/90 drop-shadow-md">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-white/40 shadow-lg">
-                <MapPin className="w-4 h-4 text-accent" />
-                <span className="font-medium text-primary">New York, USA</span>
-              </div>
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-white/40 shadow-lg">
                 <Mail className="w-4 h-4 text-primary" />
                 <span className="font-medium text-primary">swati.guleria2319@gmail.com</span>
