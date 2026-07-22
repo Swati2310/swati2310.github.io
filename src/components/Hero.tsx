@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 flex items-center justify-center">
         <div className="max-w-md w-full">
           {/* Main card */}
-          <div className="relative gradient-card border border-border/50 rounded-2xl p-10 text-center shadow-glow animate-pop-up overflow-hidden hover:animate-pop-up-hover aspect-[3/4] flex flex-col justify-center">
+          <div className="relative gradient-card border border-border/50 rounded-2xl p-10 text-center shadow-glow animate-pop-up overflow-hidden hover:animate-pop-up-hover aspect-[3/4] flex flex-col">
             {/* Background Image */}
             <div
               className="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"
@@ -38,17 +38,20 @@ const Hero = () => {
             {/* Light overlay to keep text readable while showing skyline */}
             <div className="absolute inset-0 bg-gradient-to-br from-background/22 via-background/18 to-background/22" />
 
-            {/* Content */}
-            <div className="relative z-10">
+            {/* Content - name/title pinned to top, contact/social/CTA pinned to bottom so the photo shows through the middle */}
+            <div className="relative z-10 h-full flex flex-col justify-between">
+            <div>
             <div className="animate-pop-up" style={{ animationDelay: '0.05s' }}>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground drop-shadow-none inline-block px-4 py-1 rounded-xl bg-background/80 backdrop-blur-sm">
               SWATI
             </h1>
             </div>
-            <p className="text-lg md:text-xl text-foreground font-medium mb-6 inline-block px-4 py-1.5 rounded-xl bg-background/80 backdrop-blur-sm">
+            <p className="text-lg md:text-xl text-foreground font-medium inline-block px-4 py-1.5 rounded-xl bg-background/80 backdrop-blur-sm">
             Gen AI Engineer | Software Engineer | DS Grad @Stony Brook University
             </p>
+            </div>
 
+            <div>
             {/* Contact */}
             <div className="flex flex-wrap justify-center gap-6 mb-8 text-foreground/90 drop-shadow-md">
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-white/40 shadow-lg">
@@ -56,7 +59,7 @@ const Hero = () => {
                 <span className="font-medium text-primary">swati.guleria2319@gmail.com</span>
               </div>
             </div>
-            
+
             {/* Social Links */}
             <div className="flex justify-center gap-4 mb-8">
               <a
@@ -92,7 +95,7 @@ const Hero = () => {
                 <Phone className="w-5 h-5" />
               </Button>
             </div>
-            
+
             {/* Download Resume Button */}
             <Button
               variant="hero"
@@ -103,6 +106,7 @@ const Hero = () => {
               <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               Download Resume
             </Button>
+            </div>
             </div>
           </div>
         </div>
