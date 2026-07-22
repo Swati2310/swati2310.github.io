@@ -42,11 +42,11 @@ const Hero = () => {
             <div className="relative z-10 h-full flex flex-col justify-between">
             <div className="-mt-10 pt-3">
             <div className="animate-pop-up" style={{ animationDelay: '0.05s' }}>
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground drop-shadow-none inline-block px-4 py-1 rounded-xl bg-background/80 backdrop-blur-sm">
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-primary drop-shadow-none inline-block px-4 py-1 rounded-xl bg-background/80 backdrop-blur-sm">
               SWATI
             </h1>
             </div>
-            <p className="text-lg md:text-xl text-foreground font-medium inline-block px-4 py-1.5 rounded-xl bg-background/80 backdrop-blur-sm">
+            <p className="text-lg md:text-xl text-primary font-medium inline-block px-4 py-1.5 rounded-xl bg-background/80 backdrop-blur-sm">
             Gen AI Engineer | Software Engineer | DS Grad @Stony Brook University
             </p>
             </div>
