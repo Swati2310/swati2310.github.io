@@ -27,26 +27,26 @@ const Hero = () => {
       
       {/* Main content - centered card like the reference */}
       <div className="container mx-auto px-6 flex items-center justify-center">
-        <div className="max-w-2xl w-full">
+        <div className="max-w-md w-full">
           {/* Main card */}
-          <div className="relative gradient-card border border-border/50 rounded-2xl p-12 text-center shadow-glow animate-pop-up overflow-hidden hover:animate-pop-up-hover">
+          <div className="relative gradient-card border border-border/50 rounded-2xl p-10 text-center shadow-glow animate-pop-up overflow-hidden hover:animate-pop-up-hover aspect-[3/4] flex flex-col justify-center">
             {/* Background Image */}
-            <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"
+            <div
+              className="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-75 group-hover:opacity-80 transition-opacity duration-500"
               style={{ backgroundImage: 'url(/Profile_grad.jpg)' }}
             />
             {/* Light overlay to keep text readable while showing skyline */}
             <div className="absolute inset-0 bg-gradient-to-br from-background/22 via-background/18 to-background/22" />
-            
+
             {/* Content */}
             <div className="relative z-10">
             <div className="animate-pop-up" style={{ animationDelay: '0.05s' }}>
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-xl">
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground drop-shadow-none inline-block px-4 py-1 rounded-xl bg-background/80 backdrop-blur-sm">
               SWATI
             </h1>
             </div>
-            <p className="text-xl md:text-2xl text-white drop-shadow-lg mb-6">
-            Data Scientist and AI Software Engineer | Machine Learning | Gen AI | DevOps | Cloud Technologies. 
+            <p className="text-lg md:text-xl text-foreground font-medium mb-6 inline-block px-4 py-1.5 rounded-xl bg-background/80 backdrop-blur-sm">
+            Data Scientist and AI Software Engineer | Machine Learning | Gen AI | DevOps | Cloud Technologies.
             </p>
             
             {/* Location and Contact */}
