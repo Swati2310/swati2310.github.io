@@ -40,7 +40,7 @@ const Hero = () => {
 
             {/* Content - name/title pinned to top, contact/social/CTA pinned to bottom so the photo shows through the middle */}
             <div className="relative z-10 h-full flex flex-col justify-between">
-            <div>
+            <div className="-mt-10 pt-3">
             <div className="animate-pop-up" style={{ animationDelay: '0.05s' }}>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground drop-shadow-none inline-block px-4 py-1 rounded-xl bg-background/80 backdrop-blur-sm">
               SWATI
