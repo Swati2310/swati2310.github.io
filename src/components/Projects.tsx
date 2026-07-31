@@ -24,6 +24,7 @@ const Projects = () => {
       title: "MedDebate-RAG: AI-to-AI Clinical Diagnosis Debate",
       technologies: ["Gemini 2.5 Flash Lite", "LangGraph", "FAISS", "SentenceTransformers", "Streamlit", "Plotly", "fpdf2"],
       count: "7",
+      backgroundImage: "/meddebate-rag.png",
       githubUrl: "https://github.com/Swati2310/MedDebateRag"
     },
     {
