@@ -107,7 +107,7 @@ const Experience = () => {
                     {exp.images && Array.isArray(exp.images) && exp.images.length > 0 && (
                       <div className="w-full grid grid-cols-2 gap-0">
                         {exp.images.map((img, imgIndex) => (
-                          <div key={imgIndex} className="overflow-hidden bg-card h-64">
+                          <div key={imgIndex} className="overflow-hidden bg-card h-52">
                             <img
                               src={img}
                               alt={`${exp.title} - Image ${imgIndex + 1}`}
@@ -119,7 +119,7 @@ const Experience = () => {
                       </div>
                     )}
                     {exp.image && !exp.images && (
-                      <div className="w-full overflow-hidden bg-card h-64">
+                      <div className="w-full overflow-hidden bg-card h-52">
                         <img
                           src={exp.image}
                           alt={exp.title}
@@ -130,10 +130,10 @@ const Experience = () => {
                     )}
 
                     {/* Card Content */}
-                    <div className="p-6 flex flex-col flex-grow">
+                    <div className="p-5 flex flex-col flex-grow">
                       {/* Date and Title */}
-                      <div className="mb-4">
-                        <div className="text-muted-foreground text-xs mb-2 font-medium flex items-center gap-2">
+                      <div className="mb-3">
+                        <div className="text-muted-foreground text-xs mb-1.5 font-medium flex items-center gap-2">
                           <Calendar className="w-3.5 h-3.5 text-primary" />
                           <span>{exp.period}</span>
                           {exp.current && (
@@ -145,7 +145,7 @@ const Experience = () => {
                         <h3 className="text-lg font-bold text-primary mb-1 group-hover:text-primary transition-colors">
                           {exp.title}
                         </h3>
-                        <p className="text-foreground font-semibold text-sm mb-2">{exp.company}</p>
+                        <p className="text-foreground font-semibold text-sm mb-1.5">{exp.company}</p>
                         <div className="flex items-center gap-2 text-muted-foreground text-xs">
                           <MapPin className="w-3.5 h-3.5 text-accent" />
                           <span>{exp.location}</span>
@@ -153,17 +153,17 @@ const Experience = () => {
                           <span>{exp.type}</span>
                         </div>
                       </div>
-                      
+
                       {/* Achievements - Condensed */}
-                      <div className="mb-4 flex-grow">
+                      <div className="mb-3 flex-grow">
                         <div className="flex gap-2 mb-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                           <p className="text-muted-foreground leading-relaxed text-xs">{exp.achievements}</p>
                         </div>
                       </div>
-                      
+
                       {/* Skills */}
-                      <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border/50 mt-auto">
+                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/50 mt-auto">
                         {exp.skills.map((skill, skillIndex) => (
                           <Badge 
                             key={skillIndex} 
