@@ -14,6 +14,19 @@ const Projects = () => {
       githubUrl: "https://github.com/Swati2310/unified_multilingual_RAG"
     },
     {
+      title: "CustIQ360°: Customer Intelligence Platform",
+      technologies: ["Gemini 2.5 Flash", "LangGraph", "RAG", "FAISS", "Gemini Vision AI", "SSE"],
+      count: "6",
+      backgroundImage: "/custiq360.png",
+      githubUrl: "https://github.com/Swati2310/CustIQ-360/tree/main/custiq-360"
+    },
+    {
+      title: "MedDebate-RAG: AI-to-AI Clinical Diagnosis Debate",
+      technologies: ["Gemini 2.5 Flash Lite", "LangGraph", "FAISS", "SentenceTransformers", "Streamlit", "Plotly", "fpdf2"],
+      count: "7",
+      githubUrl: "https://github.com/Swati2310/MedDebateRag"
+    },
+    {
       title: "Netflix Recommender System at Scale",
       technologies: ["Python", "PySpark", "Spark MLlib ALS", "MPI", "Slurm", "SeaWulf HPC", "NeuMF", "Parquet", "Numba", "PyTorch", "AWS/GPFS"],
       count: "11",
