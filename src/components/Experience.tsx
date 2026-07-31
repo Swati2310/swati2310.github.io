@@ -1,7 +1,46 @@
+import { useEffect, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Building, Code } from "lucide-react";
 
 const Experience = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isPausedRef = useRef(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    let rafId: number;
+    let direction = 1;
+    let lastTime: number | null = null;
+    const speed = 0.03; // pixels per millisecond
+
+    const step = (time: number) => {
+      if (lastTime === null) lastTime = time;
+      const delta = time - lastTime;
+      lastTime = time;
+
+      if (!isPausedRef.current) {
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        if (maxScroll > 0) {
+          let next = el.scrollLeft + direction * speed * delta;
+          if (next >= maxScroll) {
+            next = maxScroll;
+            direction = -1;
+          } else if (next <= 0) {
+            next = 0;
+            direction = 1;
+          }
+          el.scrollLeft = next;
+        }
+      }
+      rafId = requestAnimationFrame(step);
+    };
+
+    rafId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
   const experiences = [
     {
       title: "AI Research Assistant",
@@ -77,7 +116,14 @@ const Experience = () => {
           <div className="hidden lg:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary opacity-40"></div>
           
           {/* Experience Timeline - Horizontal Scroll - Full Width */}
-          <div className="overflow-x-auto pb-8 pt-8 scrollbar-hide w-full">
+          <div
+            ref={scrollRef}
+            className="overflow-x-auto pb-8 pt-8 scrollbar-hide w-full"
+            onMouseEnter={() => { isPausedRef.current = true; }}
+            onMouseLeave={() => { isPausedRef.current = false; }}
+            onTouchStart={() => { isPausedRef.current = true; }}
+            onTouchEnd={() => { isPausedRef.current = false; }}
+          >
             <div className="flex lg:flex-row flex-col gap-8 lg:min-w-max px-6 lg:px-12 lg:pr-12">
               {experiences.map((exp, index) => (
                 <div 
