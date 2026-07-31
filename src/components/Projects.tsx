@@ -1,11 +1,79 @@
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Github } from "lucide-react";
+import { useMarquee } from "@/hooks/use-marquee";
+
+interface Project {
+  title: string;
+  technologies: string[];
+  count: string;
+  backgroundImage?: string;
+  githubUrl?: string;
+}
+
+const ProjectCard = ({
+  project,
+  suppressClick,
+}: {
+  project: Project;
+  suppressClick: () => boolean;
+}) => (
+  <motion.div
+    className="w-[85vw] sm:w-80 lg:w-96 flex-shrink-0 bg-card text-card-foreground shadow-md rounded-lg p-6 flex flex-col hover:shadow-primary"
+    whileHover={{ scale: 1.045 }}
+    transition={{ type: "spring", stiffness: 300, damping: 22 }}
+  >
+    {project.backgroundImage && (
+      <div className="mb-4 rounded-md overflow-hidden border border-border/40">
+        <img
+          src={project.backgroundImage}
+          alt={project.title}
+          className="w-full h-44 object-cover pointer-events-none"
+          draggable={false}
+        />
+      </div>
+    )}
+
+    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+    <p className="flex-grow mb-4 text-sm text-muted-foreground">
+      {project.count}+ Technologies
+    </p>
+
+    <div className="mb-4 flex flex-wrap gap-2">
+      {project.technologies.map((tech) => (
+        <span
+          key={tech}
+          className="bg-muted text-muted-foreground px-2 py-1 text-xs rounded-md"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+
+    {project.githubUrl && (
+      <div className="mt-auto">
+        <a
+          href={project.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            if (suppressClick()) e.preventDefault();
+          }}
+          className="inline-flex items-center gap-1 text-primary hover:underline"
+        >
+          <Github className="w-4 h-4" />
+          View on GitHub &rarr;
+        </a>
+      </div>
+    )}
+  </motion.div>
+);
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [showAll, setShowAll] = useState(false);
 
-  const projects = [
+  const projects: Project[] = [
     {
       title: "Cross-Lingual Document Retrieval System with Multimodal AI",
       technologies: ["Python", "Docker", "FastAPI", "LangChain", "EmbeddingGemma", "Weaviate", "OpenWebUI", "Salesforce BLIP", "Qwen 2.5 VLM"],
@@ -69,6 +137,16 @@ const Projects = () => {
     }
   };
 
+  const { setRef, x, isPausedRef, isDraggingRef, prefersReducedMotion } = useMarquee({
+    speed: 40,
+    itemCount: visibleProjects.length,
+  });
+
+  // A real drag (movement past a small threshold) shouldn't also fire the
+  // GitHub link's click — this tracks that and suppresses the next click.
+  const dragDistanceRef = useRef(0);
+  const suppressNextClick = () => dragDistanceRef.current > 5;
+
   return (
     <section id="projects" ref={sectionRef} className="py-20 px-6 bg-secondary/5">
       <div className="container mx-auto max-w-6xl">
@@ -80,56 +158,54 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {visibleProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className="bg-card text-card-foreground shadow-md rounded-lg p-6 flex flex-col transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.03] animate-pop-up"
-              style={{ animationDelay: `${(index % visibleCount) * 0.1}s` }}
+        {/* Projects Marquee */}
+        {prefersReducedMotion ? (
+          // Reduced-motion fallback: no auto-scroll, plain manually-scrollable row.
+          <div className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide">
+            {visibleProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} suppressClick={() => false} />
+            ))}
+          </div>
+        ) : (
+          <div
+            className="overflow-hidden"
+            onMouseEnter={() => { isPausedRef.current = true; }}
+            onMouseLeave={() => { isPausedRef.current = false; }}
+          >
+            <motion.div
+              className="flex gap-8 w-max cursor-grab active:cursor-grabbing"
+              style={{ x }}
+              drag="x"
+              dragMomentum={false}
+              dragElastic={0}
+              onDragStart={() => {
+                isDraggingRef.current = true;
+                dragDistanceRef.current = 0;
+              }}
+              onDrag={(_, info) => {
+                dragDistanceRef.current += Math.abs(info.delta.x);
+              }}
+              onDragEnd={() => {
+                isDraggingRef.current = false;
+                // Give the click handler a moment to see the drag distance before resetting.
+                setTimeout(() => { dragDistanceRef.current = 0; }, 150);
+              }}
             >
-              {project.backgroundImage && (
-                <div className="mb-4 rounded-md overflow-hidden border border-border/40">
-                  <img
-                    src={project.backgroundImage}
-                    alt={project.title}
-                    className="w-full h-44 object-cover"
-                  />
-                </div>
-              )}
-
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="flex-grow mb-4 text-sm text-muted-foreground">
-                {project.count}+ Technologies
-              </p>
-
-              <div className="mb-4 flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-muted text-muted-foreground px-2 py-1 text-xs rounded-md"
-                  >
-                    {tech}
-                  </span>
+              {/* First copy — measured to determine the seamless wrap distance. */}
+              <div ref={setRef} className="flex gap-8">
+                {visibleProjects.map((project) => (
+                  <ProjectCard key={`a-${project.title}`} project={project} suppressClick={suppressNextClick} />
                 ))}
               </div>
-
-              {project.githubUrl && (
-                <div className="mt-auto">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-primary hover:underline"
-                  >
-                    <Github className="w-4 h-4" />
-                    View on GitHub &rarr;
-                  </a>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+              {/* Duplicate copy — creates the illusion of an infinite loop. */}
+              <div className="flex gap-8" aria-hidden="true">
+                {visibleProjects.map((project) => (
+                  <ProjectCard key={`b-${project.title}`} project={project} suppressClick={suppressNextClick} />
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        )}
 
         {/* Show More / Show Less Toggle */}
         {hasMore && (
