@@ -11,10 +11,7 @@ const Experience = () => {
       type: "Part-time",
       current: true,
       image: "/ceas.jpg",
-      achievements: [
-        "Designed and implemented an LLM simulation pipeline in Python to evaluate whether GPT, Claude, and Centaur can replicate human survey responses across 5 persona-conditioning conditions, using SQLite for experiment tracking and the Anthropic/OpenAI APIs for model inference.",
-        "Conducted causal inference research benchmarking LLM algorithmic fidelity against 144 human respondents using MAE, convex hull consistency tests, and stakeholder alignment metrics to assess in-distribution vs. out-of-distribution generalization of large language models."
-      ],
+      achievements: "Building an LLM simulation and causal inference pipeline to benchmark how well GPT, Claude, and Centaur replicate human survey responses against 144 real respondents.",
       skills: ["Python", "LLM Evaluation", "GPT", "Claude", "SQLite", "Causal Inference", "Anthropic API", "OpenAI API"]
     },
     {
@@ -25,10 +22,7 @@ const Experience = () => {
       type: "Internship",
       current: false,
       image: "/Voltihost_Image.png",
-      achievements: [
-        "Delivered an ML demand forecasting pipeline with 15+ engineered features achieving 91% accuracy, serving 7 to 30 day predictions in sub-3s latency via ONNX runtime on Vercel serverless infrastructure.",
-        "Built an agentic text-to-SQL system for a demand analytics tool using GPT-4o function calling and schema-aware prompting, enabling sales teams to query forecasting data with 92% SQL generation accuracy."
-      ],
+      achievements: "Built an ML demand forecasting pipeline (91% accuracy) and an agentic GPT-4o text-to-SQL system enabling sales teams to query forecasting data in natural language.",
       skills: ["Python", "ONNX", "Vercel", "GPT-4o", "Function Calling", "Time Series Forecasting", "Feature Engineering", "Text-to-SQL"]
     },
     {
@@ -39,11 +33,7 @@ const Experience = () => {
       type: "Full-time",
       current: false,
       image: "/InfosysPune.jpg",
-      achievements: [
-        "Developed an IT support ticket classification system for Finacle e-banking using fine-tuned DistilBERT and MLflow experiment tracking, deployed on AWS SageMaker with CodePipeline/CodeBuild, achieving 85% accuracy that halved SLA response times and saved $0.6M annually.",
-        "Enhanced the support pipeline with QLoRA fine-tuned Llama 2 for domain-specific summarization and a retrieval layer using LangChain and FAISS, enabling auto-routing and contextual resolution suggestions that reduced manual ticket triage by ~35%.",
-        "Implemented a REST API-enabled ID document classification service using AWS Textract and Lambda, with unit-tested serverless functions handling extraction and routing across multiple Finacle banking workflows."
-      ],
+      achievements: "Built and deployed ML-powered support automation for Finacle e-banking — ticket classification, LLM-based summarization/retrieval, and document classification — cutting SLA times and saving $0.6M annually.",
       skills: ["DistilBERT", "MLflow", "AWS SageMaker", "CodePipeline", "QLoRA", "Llama 2", "LangChain", "FAISS", "AWS Textract", "AWS Lambda", "Finacle"]
     },
     {
@@ -54,12 +44,7 @@ const Experience = () => {
       type: "Full-time",
       current: false,
       images: ["/infosys.jpg", "/BOFA.jpg"],
-      achievements: [
-        "Led a 3-member DevOps team owning CIT, E2E, and production environments for 50+ integrations across EMEA, SEPA, and APAC for Bank of America, supporting $3M in annual client revenue.",
-        "Built and orchestrated Dockerized applications on AWS EKS using Kubernetes, JFrog, and ECR, creating 15+ CI/CD pipelines with GitLab and Ansible that cut deployment time by 50%.",
-        "Provisioned Finacle Core Banking on OpenShift and AWS clusters, standing up and managing environments for 20+ applications with 5+ installations annually to support evolving business requirements.",
-        "Maintained production reliability across 10+ cloud servers through cron automation, log archiving, and disk management, while replicating 50+ databases across accounts to support application structure changes in APAC."
-      ],
+      achievements: "Led DevOps for Bank of America's Finacle banking integrations — building CI/CD pipelines, Kubernetes deployments, and cloud infrastructure supporting $3M in annual client revenue.",
       skills: ["DevOps", "AWS EKS", "Kubernetes", "JFrog", "ECR", "CI/CD", "GitLab", "Ansible", "OpenShift", "Finacle", "Cron Automation"]
     },
     {
@@ -171,16 +156,10 @@ const Experience = () => {
                       
                       {/* Achievements - Condensed */}
                       <div className="mb-4 flex-grow">
-                        {typeof exp.achievements === 'string' ? (
+                        <div className="flex gap-2 mb-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                           <p className="text-muted-foreground leading-relaxed text-xs">{exp.achievements}</p>
-                        ) : (
-                          (exp.achievements as string[]).map((achievement, achIndex) => (
-                            <div key={achIndex} className="flex gap-2 mb-2">
-                              <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                              <p className="text-muted-foreground leading-relaxed text-xs">{achievement}</p>
-                            </div>
-                          ))
-                        )}
+                        </div>
                       </div>
                       
                       {/* Skills */}
