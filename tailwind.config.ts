@@ -115,6 +115,14 @@ export default {
 					'15%': { transform: 'translateY(-8px) scale(1.03)' },
 					'20%': { transform: 'translateY(0px) scale(1)' },
 					'100%': { transform: 'translateY(0px) scale(1)' }
+				},
+				'card-float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-4px)' }
+				},
+				'ambient-zoom': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.03)' }
 				}
 			},
 			animation: {
@@ -125,7 +133,9 @@ export default {
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'pop-up': 'pop-up 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
-				'pop-up-hover': 'pop-up-hover 10s ease-in-out'
+				'pop-up-hover': 'pop-up-hover 10s ease-in-out',
+				'card-float': 'card-float 6s ease-in-out infinite',
+				'ambient-zoom': 'ambient-zoom 13s ease-in-out infinite'
 			}
 		}
 	},
